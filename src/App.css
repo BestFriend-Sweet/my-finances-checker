@@ -23,7 +23,17 @@ img {
   --fs-400: 1.75rem;
   --fs-500: 2.3rem;
 
-  --margin: 1.25em;
+  --margin-inline-m: 1.25em;
+  --margin-top-m: 2em;
+}
+
+/* Utility Classes */
+
+.subtitle {
+  color: var(--clr-primary);
+  font-size: var(--fs-300);
+  font-weight: 700;
+  margin: 0;
 }
 
 /* Typography */
@@ -47,22 +57,31 @@ body {
   font-size: var(--fs-400);
 }
 
-header {
+.header {
   color: var(--clr-text);
   font-size: var(--fs-300);
   font-weight: 500;
 }
 
-header > p {
+.header > p {
   font-weight: 700;
 }
 
-a {
+.header a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Layout */
+.calculator__buttons button {
+  color: var(--clr-text);
+  font-weight: 700;
+}
+
+label {
+  font-weight: 500;
+}
+
+/* Welcome Layout */
 
 .welcome {
   background-color: var(--clr-bg);
@@ -81,24 +100,139 @@ a {
   cursor: pointer;
 }
 
-header {
+/* Header Layout */
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--clr-primary);
 }
 
-header > p {
-  margin-left: var(--margin);
+.header > p {
+  margin-left: var(--margin-inline-m);
 }
 
-header nav ul {
+.header nav ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  margin-right: var(--margin);
+  margin-right: var(--margin-inline-m);
 }
 
-a:nth-of-type(2) {
+.header a:nth-of-type(2) {
   margin-left: 1em;
+}
+
+/* Fundamentals Layout */
+
+.fundamentals {
+  margin-inline: var(--margin-inline-m);
+}
+
+.fundamentals li::marker {
+  color: var(--clr-primary);
+}
+
+.fundamentals div {
+  display: flex;
+  align-items: center;
+}
+
+.fundamentals div h2 {
+  order: 1;
+}
+
+.fundamentals div i {
+  color: var(--clr-primary);
+  font-size: 2.5em;
+  margin-right: 0.5em;
+}
+
+/* Calculator Buttons Layout */
+
+.calculator__buttons button {
+  border: none;
+  background-color: var(--clr-primary);
+  padding: 1em 3em;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.calculator__buttons {
+  display: grid;
+  grid-template-columns: 1fr 1em 1fr;
+  grid-template-rows: 1fr 1.5em 1fr;
+  justify-items: center;
+  margin-top: var(--margin-top-m);
+}
+
+.calculator__buttons button:nth-child(3),
+.calculator__buttons button:nth-child(4) {
+  grid-row: 3 / 4;
+}
+
+.calculator__buttons button:nth-of-type(2n) {
+  grid-column: 3 / 4;
+}
+
+/* Adder Layout */
+
+.adder {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-bg);
+  padding: 1em;
+  margin-inline: var(--margin-inline-m);
+  margin-top: var(--margin-top-m);
+}
+
+.adder form {
+  display: grid;
+  grid-template-areas: 
+    'name amount category blank'
+    'input-name input-amount input-category button';
+}
+
+label[for="name"] {
+  grid-area: name;
+}
+
+#name {
+  grid-area: input-name;
+}
+
+label[for="amount"] {
+  grid-area: amount;
+}
+
+#amount {
+  grid-area: input-amount;
+}
+
+label[for="category"] {
+  grid-area: category;
+}
+
+#category {
+  grid-area: input-category;
+}
+
+form button {
+  grid-area: button;
+  border: none;
+  padding: 0;
+  background-color: none;
+  cursor: pointer;
+  justify-self: center;
+}
+
+form button i{
+  color: var(--clr-primary);
+  font-size: 2.5em;
+}
+
+input {
+  border-radius: 8px;
+  border: none;
 }
