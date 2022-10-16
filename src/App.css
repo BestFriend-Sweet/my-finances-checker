@@ -23,6 +23,9 @@ img {
   --fs-400: 1.75rem;
   --fs-500: 2.3rem;
 
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
   --margin-inline-m: 1.25em;
   --margin-top-m: 2em;
 }
@@ -53,18 +56,18 @@ body {
 
 .welcome button {
   color: var(--clr-text);
-  font-weight: 500;
+  font-weight: var(--fw-semi-bold);
   font-size: var(--fs-400);
 }
 
 .header {
   color: var(--clr-text);
   font-size: var(--fs-300);
-  font-weight: 500;
+  font-weight: var(--fw-semi-bold);
 }
 
 .header > p {
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
 .header a {
@@ -74,11 +77,11 @@ body {
 
 .calculator__buttons button {
   color: var(--clr-text);
-  font-weight: 700;
+  font-weight: var(--fw-semi-bold);
 }
 
-label {
-  font-weight: 500;
+.adder label {
+  font-weight: var(--fw-semi-bold);
 }
 
 /* Welcome Layout */
@@ -182,9 +185,15 @@ label {
   display: flex;
   flex-direction: column;
   background-color: var(--clr-bg);
-  padding: 1em;
+  padding: 2em 0.5em;
+  border-radius: 25px;
   margin-inline: var(--margin-inline-m);
   margin-top: var(--margin-top-m);
+  width: 450px;
+}
+
+.adder .subtitle {
+  margin-bottom: 1em;
 }
 
 .adder form {
@@ -200,6 +209,7 @@ label[for="name"] {
 
 #name {
   grid-area: input-name;
+  width: 150px;
 }
 
 label[for="amount"] {
@@ -208,6 +218,7 @@ label[for="amount"] {
 
 #amount {
   grid-area: input-amount;
+  width: 80px;
 }
 
 label[for="category"] {
@@ -216,6 +227,7 @@ label[for="category"] {
 
 #category {
   grid-area: input-category;
+  border: none;
 }
 
 form button {

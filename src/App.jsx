@@ -8,6 +8,14 @@ import { useState } from 'react'
 
 function App() {
   const [page, setPage] = useState('Welcome')
+  const [budget, setBudget] = useState(
+    {
+      incomes: [],
+      needs: [],
+      wants: [],
+      savings: []
+    }
+  )
 
   function changePage() {
     setPage('Main')
