@@ -30,23 +30,13 @@ function Adder() {
     function handleSubmit(event) {
         event.preventDefault()
         console.log(formData)
-        // if (formData.category === 'incomes') {
-        //     setBudget(budget.incomes.push(formData))
-        // } else if (formData.category === 'needs') {
-        //     setBudget(budget.needs.push(formData))
-        // } else if (formData.category === 'wants') {
-        //     setBudget(budget.wants.push(formData))
-        // } else if (formData.category === 'savings') {
-        //     setBudget(budget.savings.push(formData))
-        // }
-        // console.log(budget)
     }
 
     return (
         <div className='adder'>
-            <p className='subtitle'>Add Incomes or Expenses</p>
+            <p className='title'>Add Incomes or Expenses</p>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='name'>Name:</label>
+                <label htmlFor='name'>Name</label>
                 <input
                     type='text'
                     id='name'
@@ -54,7 +44,7 @@ function Adder() {
                     value={formData.name}
                     onChange={handleChangeName}
                 />
-                <label htmlFor='amount'>Amount:</label>
+                <label htmlFor='amount'>Amount</label>
                 <input
                     type='text'
                     id='amount'
@@ -62,7 +52,7 @@ function Adder() {
                     value={formData.amount}
                     onChange={handleChangeAmount}
                 />
-                <label htmlFor='category'>Category:</label>
+                <label htmlFor='category'>Category</label>
                 <select
                     id='category'
                     name='category'
