@@ -299,6 +299,14 @@ input {
   justify-content: space-between;
 }
 
+.category .line-item p {
+  margin: 0;
+}
+
+.category .line-item {
+  margin: 0.5em 0;
+}
+
 .category .line-item div {
   display: flex;
   align-items: center;
@@ -319,4 +327,8 @@ input {
   height: 1px;
   background-color: var(--clr-primary);
   opacity: 0.3;
+}
+
+.analysis {
+  display: none;
 }

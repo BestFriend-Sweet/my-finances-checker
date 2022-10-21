@@ -10,6 +10,13 @@ function Category(props) {
                 </div>
                 <p>$1000</p>
             </div>           
+            <div className='line-item'>
+                <div>
+                    <p>House</p>
+                    <i className="fa-solid fa-trash"></i>
+                </div>
+                <p>$1000</p>
+            </div>           
             <div className='total'>
                 <p>Total</p>
                 <p>$1000</p>

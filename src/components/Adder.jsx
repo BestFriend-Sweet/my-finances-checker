@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Adder() {
+function Adder(props) {
     const [formData, setFormData] = useState(
         {
             name: '',
@@ -30,6 +30,12 @@ function Adder() {
     function handleSubmit(event) {
         event.preventDefault()
         console.log(formData)
+        props.updateBudget(formData)
+        setFormData({
+            name: '',
+            amount: 0,
+            category: 'incomes'
+        })
     }
 
     return (

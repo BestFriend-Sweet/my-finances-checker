@@ -14,20 +14,28 @@ function Calculator() {
     
     function updateBudget(formData) {
         if (formData.category === 'incomes') {
-            setBudget(budget.incomes.push(formData))
+            setBudget(prevBudget => { 
+                return {...prevBudget, incomes: [...prevBudget.incomes, formData]}
+            })
         } else if (formData.category === 'needs') {
-            setBudget(budget.needs.push(formData))
+            setBudget(prevBudget => {
+                return { ...prevBudget, needs: [...prevBudget.needs, formData] }
+            })
         } else if (formData.category === 'wants') {
-            setBudget(budget.wants.push(formData))
+            setBudget(prevBudget => {
+                return { ...prevBudget, wants: [...prevBudget.wants, formData] }
+            })
         } else if (formData.category === 'savings') {
-            setBudget(budget.savings.push(formData))
+            setBudget(prevBudget => {
+                return { ...prevBudget, savings: [...prevBudget.savings, formData] }
+            })
         }
         console.log(budget)
     }
 
     const categoriesArr = ['Incomes', 'Needs', 'Wants', 'Savings']
     const categories = categoriesArr.map(el => {
-        return <Category title={el} />
+        return <Category key={el}  title={el} />
     })
 
     return (
