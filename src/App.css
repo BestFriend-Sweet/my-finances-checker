@@ -27,16 +27,10 @@ img {
   --fw-bold: 700;
 
   --margin-inline-m: 1.25em;
+  --margin-inline-d: 3.125em;
+
   --margin-top-m: 2em;
-}
-
-/* Utility Classes */
-
-.title {
-  color: var(--clr-primary);
-  font-size: var(--fs-300);
-  font-weight: var(--fw-bold);
-  margin: 0;
+  --margin-top-d: 4em;
 }
 
 /* Typography */
@@ -70,7 +64,8 @@ body {
   font-weight: var(--fw-bold);
 }
 
-.header a {
+.header a, 
+.fundamentals a{
   color: inherit;
   text-decoration: none;
 }
@@ -80,12 +75,26 @@ body {
   font-weight: var(--fw-bold);
 }
 
+.calculator__categories > button {
+  color: var(--clr-text);
+  font-weight: var(--fw-bold);
+}
+
 .adder label {
   font-weight: var(--fw-semi-bold);
 }
 
+.adder .title {
+  color: var(--clr-primary);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-bold);
+}
+
 .category .title {
   text-align: center;
+  color: var(--clr-primary);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-bold);
 }
 
 .category .line-item > p,
@@ -99,11 +108,6 @@ body {
 
 .category .line-item div i {
   color: var(--clr-primary);
-}
-
-.calculator__categories > button {
-  color: var(--clr-text);
-  font-weight: var(--fw-bold);
 }
 
 /* Welcome Layout */
@@ -225,7 +229,7 @@ body {
 }
 
 .adder .title {
-  margin-bottom: 1em;
+  margin: 0 0 1em 0;
 }
 
 .adder form {
@@ -290,6 +294,10 @@ input {
   margin-top: var(--margin-top-m);
   width: 300px;
   padding: 1em;
+}
+
+.category .title {
+  margin: 0;
 }
 
 .category .line-item,

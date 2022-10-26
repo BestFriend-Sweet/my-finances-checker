@@ -1,3 +1,5 @@
+import Button from '../components/Button'
+import Modals from '../components/Modals'
 import Adder from '../components/Adder'
 import Category from '../components/Category'
 import { useState } from 'react'
@@ -30,26 +32,25 @@ function Calculator() {
                 return { ...prevBudget, savings: [...prevBudget.savings, formData] }
             })
         }
-        console.log(budget)
     }
-
-    const categoriesArr = ['Incomes', 'Needs', 'Wants', 'Savings']
-    const categories = categoriesArr.map(el => {
-        return <Category key={el}  title={el} />
-    })
 
     return (
         <main className='calculator'>
             <section className='calculator__buttons'>
-                <button>Instructions</button>
-                <button>Tips Wants</button>
-                <button>Tips Needs</button>
-                <button>Tips Savings</button>
+                <Button name='Instructions' />
+                <Button name='Tips Wants' />
+                <Button name='Tips Needs' />
+                <Button name='Tips Savings' />
             </section>
+
+            <Modals />
 
             <section className='calculator__categories'>
                 <Adder updateBudget={updateBudget} />
-                {categories}
+                <Category title='Incomes' items={budget.incomes} />
+                <Category title='Needs' items={budget.needs} />
+                <Category title='Wants' items={budget.wants} />
+                <Category title='Savings' items={budget.savings} />
                 <button>Check My Finances!</button>
             </section>
         </main>

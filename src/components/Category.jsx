@@ -1,25 +1,28 @@
 function Category(props) {
+    const listItems = props.items.map(item => {
+        return (
+            <div className='line-item'>
+                <div>
+                    <p>{item.name}</p>
+                    <i className="fa-solid fa-trash"></i>
+                </div>
+                <p>${item.amount}</p>
+            </div>  
+        )
+    })
+
+    const listItemsTotal = props.items.reduce((prev, curr) => {
+        return prev += Number(curr.amount)
+    }, 0)
+
     return (
         <div className="category">
             <p className='title'>{props.title}</p>
-            <div className="line"></div>
-            <div className='line-item'>
-                <div>
-                    <p>House</p>
-                    <i className="fa-solid fa-trash"></i>
-                </div>
-                <p>$1000</p>
-            </div>           
-            <div className='line-item'>
-                <div>
-                    <p>House</p>
-                    <i className="fa-solid fa-trash"></i>
-                </div>
-                <p>$1000</p>
-            </div>           
+            <div className="line"></div>   
+            {listItems}
             <div className='total'>
                 <p>Total</p>
-                <p>$1000</p>
+                <p>${listItemsTotal}</p>
             </div>
             <div className='analysis'>
                 <div>
