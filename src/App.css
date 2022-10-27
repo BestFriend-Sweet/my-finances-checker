@@ -80,6 +80,11 @@ body {
   font-weight: var(--fw-bold);
 }
 
+dialog button {
+  color: var(--clr-text);
+  font-family: inherit;
+}
+
 .adder label {
   font-weight: var(--fw-semi-bold);
 }
@@ -213,6 +218,26 @@ body {
   cursor: pointer;
   display: block;
   margin: 1.5em auto;
+}
+
+/* Modals */
+
+dialog::backdrop {
+  background-color: rgba(217, 217, 217, 0.5);
+}
+
+dialog {
+  border: none;
+  background-color: #F8EDF9;
+  border-radius: 35px;
+}
+
+dialog button {
+  background-color: var(--clr-primary);
+  border-radius: 10px;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
 }
 
 /* Adder Layout */

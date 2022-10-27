@@ -34,13 +34,29 @@ function Calculator() {
         }
     }
 
+    function displayModalInstructions() {
+        document.getElementById('modal-instructions').showModal()
+    }
+
+    function displayModalWants() {
+        document.getElementById('modal-wants').showModal()
+    }
+
+    function displayModalNeeds() {
+        document.getElementById('modal-needs').showModal()
+    }
+
+    function displayModalSavings() {
+        document.getElementById('modal-savings').showModal()
+    }
+
     return (
         <main className='calculator'>
             <section className='calculator__buttons'>
-                <Button name='Instructions' />
-                <Button name='Tips Wants' />
-                <Button name='Tips Needs' />
-                <Button name='Tips Savings' />
+                <Button onClick={displayModalInstructions} name='Instructions' />
+                <Button onClick={displayModalWants} name='Tips Wants' />
+                <Button onClick={displayModalNeeds} name='Tips Needs' />
+                <Button onClick={displayModalSavings} name='Tips Savings' />
             </section>
 
             <Modals />

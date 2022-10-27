@@ -1,7 +1,7 @@
 function Fundamentals() {
     return (
         <main className='fundamentals'>
-            <h1><a href="https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator" target="_blank">What is the 50/30/20 budget? - NerdWallet</a></h1>
+            <h1>What is the 50/30/20 budget? - <a href="https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator" target="_blank">NerdWallet</a></h1>
             <p>The 50/30/20 rule is a popular budgeting method that splits your monthly income among three main categories. Here's how it breaks down:</p>
             <div>
                 <h2>Monthly after-tax income.</h2>

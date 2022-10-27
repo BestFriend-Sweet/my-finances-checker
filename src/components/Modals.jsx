@@ -1,6 +1,24 @@
+import ReactPortal from '../components/ReactPortal'
+
 function Modals() {
+    function handleCloseInstructions() {
+        document.getElementById('modal-instructions').close()
+    }
+
+    function handleCloseWants() {
+        document.getElementById('modal-wants').close()
+    }
+
+    function handleCloseNeeds() {
+        document.getElementById('modal-needs').close()
+    }
+
+    function handleCloseSavings() {
+        document.getElementById('modal-savings').close()
+    }
+
     return (
-        <>
+        <ReactPortal wrapperId='react-portal-modals-container'>
             <dialog id='modal-instructions'>
                 <p>Instructions</p>
                 <ul>
@@ -8,7 +26,7 @@ function Modals() {
                     <li>If you want to change an income or expense you can delete it and then added with the correct information.</li>
                     <li>After you are done and it's looking like it has everything you earn or spend during a regular month click on Check My Finances!</li>
                 </ul>
-                <button value='cancel'>Close</button>
+                <button onClick={handleCloseInstructions}>Close</button>
             </dialog>
             <dialog id='modal-needs'>
                 <p>Tips Needs</p>
@@ -22,6 +40,7 @@ function Modals() {
                     <li>Minimum loan payments. Anything beyond the minimum goes into the savings and debt repayment bucket.</li>
                     <li>Child care or other expenses that need to be covered so you can work.</li>
                 </ul>
+                <button onClick={handleCloseNeeds}>Close</button>
             </dialog>
             <dialog id='modal-wants'>
                 <p>Tips Wants</p>
@@ -32,6 +51,7 @@ function Modals() {
                     <li>Entertainment.</li>
                     <li>Meals out.</li>
                 </ul>
+                <button onClick={handleCloseWants}>Close</button>
             </dialog>
             <dialog id='modal-savings'>
                 <p>Tips Savings</p>
@@ -42,8 +62,9 @@ function Modals() {
                     <li>Saving for retirement through a 401(k) and perhaps an individual retirement account.</li>
                     <li>Paying off debt, beginning with high-interest accounts like credit cards.</li>
                 </ul>
+                <button onClick={handleCloseSavings}>Close</button>
             </dialog>
-        </>
+        </ReactPortal>
     )
 }
 
