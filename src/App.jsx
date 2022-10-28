@@ -22,6 +22,7 @@ function App() {
         <Header />
 
         <Routes>
+          <Route path='/' element={<Fundamentals />} />
           <Route path='/fundamentals' element={<Fundamentals />} />
           <Route path='/calculator' element={<Calculator />}  />
         </Routes>
