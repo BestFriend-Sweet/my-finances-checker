@@ -19,19 +19,21 @@ img {
   --clr-bg-modal: #D9D9D9;
   --clr-text: #ffffff;
 
-  --fs-200: 1.25rem;
-  --fs-300: 1.5rem;
-  --fs-400: 1.75rem;
-  --fs-500: 2.3rem;
+  --fs-100: 0.85rem;
+  --fs-200: 1rem;
+  --fs-300: 1.25rem;
+  --fs-400: 1.5rem;
+  --fs-500: 1.75rem;
+  --fs-600: 2rem;
 
   --fw-semi-bold: 500;
   --fw-bold: 700;
 
-  --margin-inline-m: 1.25em;
-  --margin-inline-d: 3.125em;
+  --space-inline-m: 1.25em;
+  --space-inline-d: 3.125em;
 
-  --margin-top-m: 2em;
-  --margin-top-d: 4em;
+  --space-block-m: 2em;
+  --space-block-d: 4em;
 }
 
 /* Typography */
@@ -52,12 +54,12 @@ body {
 .welcome button {
   color: var(--clr-text);
   font-weight: var(--fw-semi-bold);
-  font-size: var(--fs-400);
+  font-size: var(--fs-300);
 }
 
 .header {
   color: var(--clr-text);
-  font-size: var(--fs-300);
+  font-size: var(--fs-400);
   font-weight: var(--fw-semi-bold);
 }
 
@@ -87,12 +89,15 @@ body {
 }
 
 .modal-content {
-  text-align: center;
-  font-size: 10px;
+  font-size: var(--fs-100);
 }
 
 .modal-title {
   font-weight: var(--fw-bold);
+}
+
+.modal-description {
+  line-height: 22px;
 }
 
 .modal-content button {
@@ -159,14 +164,14 @@ body {
 }
 
 .header > p {
-  margin-left: var(--margin-inline-m);
+  margin-left: var(--space-inline-m);
 }
 
 .header nav ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  margin-right: var(--margin-inline-m);
+  margin-right: var(--space-inline-m);
 }
 
 .header a:nth-of-type(2) {
@@ -176,7 +181,7 @@ body {
 /* Fundamentals Layout */
 
 .fundamentals {
-  margin: 3em var(--margin-inline-m);
+  margin: 3em var(--space-inline-m);
 }
 
 .fundamentals li::marker {
@@ -200,7 +205,7 @@ body {
 
 @media (min-width: 50em) {
   .fundamentals {
-    margin: 3em var(--margin-inline-d);
+    margin: 3em var(--space-inline-d);
   }
   .fundamentals p {
     width: 60%;
@@ -221,7 +226,7 @@ body {
     'left savings right'
     'left check-btn right'
     'left bottom right';
-  gap: var(--margin-top-m);
+  gap: var(--space-block-m);
 }
 
 .calculator>button {
@@ -238,7 +243,7 @@ body {
 .calculator__right-menu {
   display: none;
   background-color: rgba(109, 0, 112, 0.5);
-  padding-top: var(--margin-top-m);
+  padding-top: var(--space-block-m);
 }
 
 .calculator__right-menu * {
@@ -402,10 +407,16 @@ body {
   border-radius: 35px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 2em;
-  width: 80%;
+  max-width: 450px;
+}
+
+.modal-content * {
+  margin: 0;
+}
+
+.modal-title {
+  margin-bottom: 1em;
 }
 
 .modal-content button {
@@ -414,6 +425,14 @@ body {
   border: none;
   padding: 0.7em 1.3em;
   cursor: pointer;
+  align-self: center;
+  margin-top: 1em;
+}
+
+@media (min-width: 50em) {
+  .modal-content {
+    max-width: 600px;
+  }
 }
 
 /* Adder Layout */
