@@ -86,17 +86,18 @@ body {
   font-weight: var(--fw-bold);
 }
 
-.modal-content button {
-  color: var(--clr-text);
-  font-family: inherit;
-}
-
 .modal-content {
   text-align: center;
+  font-size: 10px;
 }
 
 .modal-title {
   font-weight: var(--fw-bold);
+}
+
+.modal-content button {
+  color: var(--clr-text);
+  font-family: inherit;
 }
 
 .adder label {
@@ -265,13 +266,13 @@ body {
 .calculator__buttons button:nth-child(1) {
   grid-area: instructions;
 }
-.calculator__buttons button:nth-child(1) {
+.calculator__buttons button:nth-child(2) {
   grid-area: needs;
 }
-.calculator__buttons button:nth-child(1) {
+.calculator__buttons button:nth-child(3) {
   grid-area: wants;
 }
-.calculator__buttons button:nth-child(1) {
+.calculator__buttons button:nth-child(4) {
   grid-area: savings;
 }
 
@@ -404,6 +405,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2em;
+  width: 80%;
 }
 
 .modal-content button {
