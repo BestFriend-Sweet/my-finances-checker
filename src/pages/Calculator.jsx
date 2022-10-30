@@ -72,12 +72,20 @@ function Calculator() {
                 <button onClick={updateSavingsState}>Tips Savings</button>
             </section>
 
-            {/* <aside className='calculator__right-menu'>
-                <p><a href="">Instructions</a></p>
-                <p><a href="">Tips Wants</a></p>
-                <p><a href="">Tips Needs</a></p>
-                <p><a href="">Tips Savings</a></p>
-            </aside> */}
+            <aside className='calculator__right-menu'>
+                <p onClick={updateInstructionsState}>Instructions</p>
+                <p onClick={updateNeedsState}>Tips Needs</p>
+                <p onClick={updateWantsState}>Tips Wants</p>
+                <p onClick={updateSavingsState}>Tips Savings</p>
+            </aside>
+
+            <Adder updateBudget={updateBudget} />
+            <Category title='Incomes' items={budget.incomes} />
+            <Category title='Needs' items={budget.needs} />
+            <Category title='Wants' items={budget.wants} />
+            <Category title='Savings' items={budget.savings} />
+
+            <button>Check My Finances!</button>
 
             <Modal isOpen={isOpen.instructions} handleClose={updateInstructionsState} >
                 <div className='modal-content'>
@@ -93,7 +101,7 @@ function Calculator() {
                     <p className='modal-title'>Tips Needs</p>
                     <p className='modal-description'>50% of your income: needs. Necessities are the expenses you can't avoid.</p>
                     <p className="modal-description"><strong>For example:</strong> housing, food, transportation, basic utilities, insurance, minimum loan payments, child care or other expenses that need to be
-                    cover so you can work.</p>
+                        cover so you can work.</p>
                     <button onClick={updateNeedsState}>Close</button>
                 </div>
             </Modal>
@@ -114,15 +122,6 @@ function Calculator() {
                     <button onClick={updateSavingsState}>Close</button>
                 </div>
             </Modal>
-
-            <section className='calculator__categories'>
-                <Adder updateBudget={updateBudget} />
-                <Category title='Incomes' items={budget.incomes} />
-                <Category title='Needs' items={budget.needs} />
-                <Category title='Wants' items={budget.wants} />
-                <Category title='Savings' items={budget.savings} />
-                <button>Check My Finances!</button>
-            </section>
         </main>
     )
 }

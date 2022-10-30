@@ -16,7 +16,7 @@ function Category(props) {
     }, 0)
 
     return (
-        <div className="category">
+        <div className={`category | ${props.title}`}>
             <p className='title'>{props.title}</p>
             <div className="line"></div>   
             {listItems}
