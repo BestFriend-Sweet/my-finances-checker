@@ -8,11 +8,11 @@ function Header() {
                 <ul>
                     <Link to='fundamentals'>
                         <li>Fundamentals</li>
-                        <i class="fa-solid fa-book"></i>
+                        <i className="fa-solid fa-book"></i>
                     </Link>
                     <Link to='calculator'>
                         <li>Calculator</li>
-                        <i class="fa-solid fa-calculator"></i>
+                        <i className="fa-solid fa-calculator"></i>
                     </Link>                    
                 </ul>
             </nav>

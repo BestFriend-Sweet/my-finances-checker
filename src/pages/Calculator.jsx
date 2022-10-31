@@ -1,7 +1,7 @@
 import Modal from '../components/Modal'
 import Adder from '../components/Adder'
 import Category from '../components/Category'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 function Calculator() {
     const [isOpen, setIsOpen] = useState({

@@ -1,23 +1,17 @@
-function Category(props) {
-    const listItems = props.items.map(item => {
-        return (
-            <div className='line-item'>
-                <div>
-                    <p>{item.name}</p>
-                    <i className="fa-solid fa-trash"></i>
-                </div>
-                <p>${item.amount}</p>
-            </div>  
-        )
+import LineItem from './LineItem'
+
+function Category({ title, items }) {
+    const listItems = items.map(item => {
+        return <LineItem item={item} />
     })
 
-    const listItemsTotal = props.items.reduce((prev, curr) => {
+    const listItemsTotal = items.reduce((prev, curr) => {
         return prev += Number(curr.amount)
     }, 0)
 
     return (
-        <div className={`category | ${props.title}`}>
-            <p className='title'>{props.title}</p>
+        <div className={`category | ${title}`}>
+            <p className='title'>{title}</p>
             <div className="line"></div>   
             {listItems}
             <div className='total'>
