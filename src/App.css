@@ -178,6 +178,19 @@ body {
   margin-left: 1em;
 }
 
+.header .fa-solid {
+  display: none;
+}
+
+@media (max-width: 31.25em) {
+  .header .fa-solid {
+    display: block;
+  }
+  .header nav li {
+    display: none;
+  }
+}
+
 /* Fundamentals Layout */
 
 .fundamentals {
@@ -294,11 +307,11 @@ body {
 }
 
 .calculator .Wants {
-  grid-area: savings;
+  grid-area: wants;
 }
 
 .calculator .Savings {
-  grid-area: wants;
+  grid-area: savings;
 }
 
 @media (min-width: 50em)  {
@@ -341,10 +354,10 @@ body {
     grid-area: needs;
   }
   .calculator .Wants {
-    grid-area: savings;
+    grid-area: wants;
   }
   .calculator .Savings {
-    grid-area: wants;
+    grid-area: savings;
   }
   .calculator>button {
     grid-area: check-btn;
@@ -379,10 +392,10 @@ body {
     grid-area: needs;
   }
   .calculator .Wants {
-    grid-area: savings;
+    grid-area: wants;
   }
   .calculator .Savings {
-    grid-area: wants;
+    grid-area: savings;
   }
   .calculator>button {
     grid-area: check-btn;
