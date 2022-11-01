@@ -41,7 +41,7 @@ If the original repository has been changed since you first clone it:
 2. Sync the fork
 
 Please refer to the [How To Create a Pull Request on GitHub](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) article which 
-can be found in the **New contributor guide** section for a more in depth explanation.
+can also be found in the **New contributor guide** section for a more in depth explanation.
 
 ### Pull Request
 
