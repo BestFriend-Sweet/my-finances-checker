@@ -1,7 +1,7 @@
 import Modal from '../components/Modal'
 import Adder from '../components/Adder'
 import Category from '../components/Category'
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 
 function Calculator() {
     const [isOpen, setIsOpen] = useState({
@@ -90,7 +90,7 @@ function Calculator() {
             <Modal isOpen={isOpen.instructions} handleClose={updateInstructionsState} >
                 <div className='modal-content'>
                     <p className='modal-title'>Instructions</p>
-                    <ol class='modal-description'>
+                    <ol className='modal-description'>
                         <li>Add incomes and expenses, try to list everything, it will make the results more accurate.</li>
                         <li>If you want to change an income or expense you can delete it and then added with the correct information</li>
                         <li>After you are done and it's looking like it has everything you earn or spend during a regular month click on Check My Finances!</li>

@@ -4,7 +4,7 @@ function LineItem({ item }) {
     const { isHovered, hoverRef } = useHover()
 
     return (
-        <div className='line-item' ref={hoverRef} key={item.name} >
+        <div className='line-item' ref={hoverRef}>
             <div>
                 <p>{item.name}</p>
                 {isHovered && <i className="fa-solid fa-trash"></i>}

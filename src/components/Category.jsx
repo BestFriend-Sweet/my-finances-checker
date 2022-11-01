@@ -1,8 +1,8 @@
 import LineItem from './LineItem'
 
 function Category({ title, items }) {
-    const listItems = items.map(item => {
-        return <LineItem item={item} />
+    const listItems = items.map((item, index) => {
+        return <LineItem key={index} item={item} />
     })
 
     const listItemsTotal = items.reduce((prev, curr) => {

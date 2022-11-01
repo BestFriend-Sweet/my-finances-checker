@@ -4,7 +4,7 @@ function Adder({ updateBudget }) {
     const [formData, setFormData] = useState(
         {
             name: '',
-            amount: 0,
+            amount: '',
             category: 'incomes'
         }
     )
@@ -32,7 +32,7 @@ function Adder({ updateBudget }) {
         updateBudget(formData)
         setFormData({
             name: '',
-            amount: 0,
+            amount: '',
             category: 'incomes'
         })
     }
@@ -45,6 +45,7 @@ function Adder({ updateBudget }) {
                 <input
                     type='text'
                     id='name'
+                    placeholder='Name of amount'
                     name='name'
                     value={formData.name}
                     onChange={handleChangeName}
@@ -53,6 +54,7 @@ function Adder({ updateBudget }) {
                 <input
                     type='text'
                     id='amount'
+                    placeholder='Amount in $'
                     name='amount'
                     value={formData.amount}
                     onChange={handleChangeAmount}
