@@ -182,7 +182,7 @@ body {
   display: none;
 }
 
-@media (max-width: 31.25em) {
+@media (max-width: 32em) {
   .header .fa-solid {
     display: block;
   }
@@ -276,7 +276,7 @@ body {
 .calculator__buttons button {
   border: none;
   background-color: var(--clr-primary);
-  padding: 1em 3em;
+  padding: 1em 2.3em;
   border-radius: 100px;
   cursor: pointer;
 }
@@ -471,6 +471,14 @@ body {
     'input-name input-amount input-category button';
 }
 
+#name,
+#amount,
+#category {
+  border-radius: 8px;
+  border: none;
+  height: 34px;
+}
+
 label[for="name"] {
   grid-area: name;
 }
@@ -495,7 +503,6 @@ label[for="category"] {
 
 #category {
   grid-area: input-category;
-  border: none;
 }
 
 form button {
@@ -512,9 +519,24 @@ form button i {
   font-size: 2.5em;
 }
 
-input {
-  border-radius: 8px;
-  border: none;
+@media (max-width: 32em) {
+  .adder {
+    width: 300px;
+  }
+  .adder form {
+    grid-template-areas:
+      'name amount'
+      'input-name input-amount'
+      'category blank'
+      'input-category button';
+    gap: 0.5em;
+  }
+  #category {
+    width: 150px;
+  }
+  form button {
+    justify-self: flex-start;
+  }
 }
 
 /* Category Layout */
