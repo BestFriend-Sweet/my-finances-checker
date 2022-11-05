@@ -340,6 +340,7 @@ body {
       'left wants savings right'
       'left check-btn check-btn right'
       'left bottom bottom right';
+    gap: var(--space-block-d);
   }
   .calculator__buttons {
     grid-area: buttons;
@@ -364,20 +365,22 @@ body {
   }
 }
 
-@media (min-width: 70em) {
+@media (min-width: 75em) {
   .calculator {
     grid-template-areas:
-      'space-top space-top space-top aside'
+      'top top top aside'
       'adder adder incomes aside'
       'needs wants savings aside'
       'check-btn check-btn check-btn aside'
-      'space-bottom space-bottom space-bottom aside';
+      'bottom bottom bottom aside';
+    gap: var(--space-block-d);
   }
   .calculator__right-menu {
     grid-area: aside;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
   }
   .calculator__buttons {
     display: none;
