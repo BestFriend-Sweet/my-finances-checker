@@ -471,7 +471,8 @@ body {
   display: grid;
   grid-template-areas: 
     'name amount category blank'
-    'input-name input-amount input-category button';
+    'input-name input-amount input-category button'
+    'name-error amount-error space space';
 }
 
 #name,
@@ -491,6 +492,10 @@ label[for="name"] {
   width: 150px;
 }
 
+.name-error {
+  grid-area: name-error;
+}
+
 label[for="amount"] {
   grid-area: amount;
 }
@@ -498,6 +503,10 @@ label[for="amount"] {
 #amount {
   grid-area: input-amount;
   width: 80px;
+}
+
+.amount-error {
+  grid-area: amount-error;
 }
 
 label[for="category"] {
@@ -530,6 +539,7 @@ form button i {
     grid-template-areas:
       'name amount'
       'input-name input-amount'
+      'name-error amount-error'
       'category blank'
       'input-category button';
     gap: 0.5em;
