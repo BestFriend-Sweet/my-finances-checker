@@ -19,6 +19,13 @@ function Calculator() {
         }
     )
     
+    function checkFinances() {
+        const totalIncomes = budget.incomes.reduce((prev, current) => prev + Number(current.amount), 0)
+        const totalNeeds = budget.needs.reduce((prev, current) => prev + Number(current.amount), 0)
+        const totalWants = budget.wants.reduce((prev, current) => prev + Number(current.amount), 0)
+        const totalSavings = budget.savings.reduce((prev, current) => prev + Number(current.amount), 0)
+    }
+    
     function updateBudget(formData) {
         if (formData.category === 'incomes') {
             setBudget(prevBudget => { 
@@ -85,7 +92,7 @@ function Calculator() {
             <Category title='Wants' items={budget.wants} />
             <Category title='Savings' items={budget.savings} />
 
-            <button>Check My Finances!</button>
+            <button onClick={checkFinances}>Check My Finances!</button>
 
             <Modal isOpen={isOpen.instructions} handleClose={updateInstructionsState} >
                 <div className='modal-content'>

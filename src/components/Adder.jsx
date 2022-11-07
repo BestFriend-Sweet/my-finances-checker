@@ -5,6 +5,7 @@ function Adder({ updateBudget }) {
     const { register, handleSubmit, reset, formState, formState: { errors } } = useForm()
     
     function onSubmit(data) {
+        console.log(data)
         updateBudget(data)
     }
 
