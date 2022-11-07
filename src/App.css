@@ -187,15 +187,19 @@ body {
 }
 
 .header .fa-solid {
+  display: block;
+}
+
+.header nav li {
   display: none;
 }
 
-@media (max-width: 32em) {
+@media (min-width: 32em) {
   .header .fa-solid {
-    display: block;
+    display: none;
   }
   .header nav li {
-    display: none;
+    display: block;
   }
 }
 
