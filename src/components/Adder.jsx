@@ -1,70 +1,61 @@
-import { useState } from 'react'
+import { useForm }  from 'react-hook-form'
+import { useEffect } from 'react'
 
 function Adder({ updateBudget }) {
-    const [formData, setFormData] = useState(
-        {
-            name: '',
-            amount: '',
-            category: 'incomes'
-        }
-    )
-
-    function handleChangeName(event) {
-        setFormData(prevFormData => {
-            return { ...prevFormData, name: event.target.value }
-        })
+    const { register, handleSubmit, reset, formState, formState: { errors } } = useForm()
+    
+    function onSubmit(data) {
+        updateBudget(data)
     }
 
-    function handleChangeAmount(event) {
-        setFormData(prevFormData => {
-            return { ...prevFormData, amount: event.target.value }
-        })
-    }
-
-    function handleChangeCategory(event) {
-        setFormData(prevFormData => {
-            return { ...prevFormData, category: event.target.value }
-        })
-    }
-
-    function handleSubmit(event) {
-        event.preventDefault()
-        updateBudget(formData)
-        setFormData({
-            name: '',
-            amount: '',
-            category: 'incomes'
-        })
-    }
+    useEffect(() => {
+        formState.isSubmitSuccessful && reset()
+    }, [formState, reset])
 
     return (
         <div className='adder'>
             <p className='title'>Add Incomes or Expenses</p>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor='name'>Name</label>
                 <input
                     type='text'
                     id='name'
                     placeholder='Name of amount'
-                    name='name'
-                    value={formData.name}
-                    onChange={handleChangeName}
+                    {...register('name', {
+                        required: 'A name for the amount is required.',
+                        pattern: {
+                            value: /^[a-z ]+$/i,
+                            message: 'Please insert only letters or spaces.'
+                        }
+                    })}
                 />
+                {errors.name && <p className='name-error'>{errors.name.message}</p>}
                 <label htmlFor='amount'>Amount</label>
                 <input
                     type='text'
                     id='amount'
                     placeholder='Amount in $'
-                    name='amount'
-                    value={formData.amount}
-                    onChange={handleChangeAmount}
+                    {...register('amount', {
+                        required: 'An amount is required.',
+                        pattern: {
+                            value: /^[0-9]+$/,
+                            message: 'Please insert only numbers.'
+                        },
+                        min: {
+                            value: 0,
+                            message: 'Please insert amounts greater than 0.'
+                        },
+                        max: {
+                            value: 10000000,
+                            message: 'Please insert amounts less than 10 000 000.'
+                        }
+                    })}
                 />
+                {errors.amount && <p className='amount-error'>{errors.amount.message}</p>}
                 <label htmlFor='category'>Category</label>
                 <select
                     id='category'
-                    name='category'
-                    value={formData.category}
-                    onChange={handleChangeCategory}
+                    {...register('category', { required: true })}
                 >
                     <option value='incomes'>Incomes</option>
                     <option value='needs'>Needs</option>
