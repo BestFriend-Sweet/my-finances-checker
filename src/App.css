@@ -115,6 +115,14 @@ body {
   font-weight: var(--fw-bold);
 }
 
+.name-error,
+.amount-error {
+  font-size: 0.7rem;
+  margin: 0;
+  margin-top: 0.3em;
+  font-weight: var(--fw-semi-bold);
+}
+
 .category .title {
   text-align: center;
   color: var(--clr-primary);
@@ -460,7 +468,7 @@ body {
   padding: 2em 0.5em;
   border-radius: 25px;
   margin-inline: auto;
-  width: 450px;
+  width: 300px;
 }
 
 .adder .title {
@@ -469,10 +477,13 @@ body {
 
 .adder form {
   display: grid;
-  grid-template-areas: 
-    'name amount category blank'
-    'input-name input-amount input-category button'
-    'name-error amount-error space space';
+  grid-template-areas:
+      'name amount'
+      'input-name input-amount'
+      'name-error amount-error'
+      'category blank'
+      'input-category button';
+  gap: 0.5em;
 }
 
 #name,
@@ -515,6 +526,7 @@ label[for="category"] {
 
 #category {
   grid-area: input-category;
+  width: 150px;
 }
 
 form button {
@@ -523,7 +535,7 @@ form button {
   padding: 0;
   background-color: none;
   cursor: pointer;
-  justify-self: center;
+  justify-self: flex-start;
 }
 
 form button i {
@@ -531,24 +543,24 @@ form button i {
   font-size: 2.5em;
 }
 
-@media (max-width: 32em) {
+@media (min-width: 32em) {
   .adder {
-    width: 300px;
+    width: 450px;
   }
   .adder form {
-    grid-template-areas:
-      'name amount'
-      'input-name input-amount'
-      'name-error amount-error'
-      'category blank'
-      'input-category button';
-    gap: 0.5em;
+    grid-template-areas: 
+        'name amount category blank'
+        'input-name input-amount input-category button'
+        'name-error amount-error space space'; 
   }
-  #category {
+  #amount {
     width: 150px;
   }
+  #category {
+    width: 75px;
+  }
   form button {
-    justify-self: flex-start;
+    justify-self: center;
   }
 }
 

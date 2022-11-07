@@ -1,11 +1,16 @@
 import { useForm }  from 'react-hook-form'
+import { useEffect } from 'react'
 
 function Adder({ updateBudget }) {
-    const { register, handleSubmit, formState: { errors } } = useForm()
+    const { register, handleSubmit, reset, formState, formState: { errors } } = useForm()
     
     function onSubmit(data) {
-        console.log(data)
+        updateBudget(data)
     }
+
+    useEffect(() => {
+        formState.isSubmitSuccessful && reset()
+    }, [formState, reset])
 
     return (
         <div className='adder'>
