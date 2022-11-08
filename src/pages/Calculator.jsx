@@ -1,6 +1,8 @@
 import Modal from '../components/Modal'
 import Adder from '../components/Adder'
+import Incomes from '../components/Incomes'
 import Category from '../components/Category'
+import Message from '../components/Message'
 import { useState } from 'react'
 
 function Calculator() {
@@ -18,6 +20,23 @@ function Calculator() {
             savings: []
         }
     )
+    const [displayResults, setDisplayResults] = useState(false)
+    const [isBudgetHealthy, setIsBudgetHealthy] = useState(false)
+    
+    function checkFinances() {
+        setDisplayResults(true)
+        checkBudget()
+    }
+
+    function checkBudget() {
+        const needsResult = budget.incomes.reduce((prev, curr) => prev + Number(curr.amount), 0) * 0.5 - budget.needs.reduce((prev, curr) => prev + Number(curr.amount), 0)
+        const wantsResult = budget.incomes.reduce((prev, curr) => prev + Number(curr.amount), 0) * 0.3 - budget.wants.reduce((prev, curr) => prev + Number(curr.amount), 0)
+        const savingsResult = budget.incomes.reduce((prev, curr) => prev + Number(curr.amount), 0) * 0.2 - budget.savings.reduce((prev, curr) => prev + Number(curr.amount), 0)
+
+        if (needsResult >= 0 && wantsResult >= 0 && savingsResult >= 0) {
+            setIsBudgetHealthy(true)
+        }
+    }
     
     function updateBudget(formData) {
         if (formData.category === 'incomes') {
@@ -80,12 +99,14 @@ function Calculator() {
             </aside>
 
             <Adder updateBudget={updateBudget} />
-            <Category title='Incomes' items={budget.incomes} />
-            <Category title='Needs' items={budget.needs} />
-            <Category title='Wants' items={budget.wants} />
-            <Category title='Savings' items={budget.savings} />
+            <Incomes items={budget.incomes} />
+            <Category title='Needs' incomes={budget.incomes} items={budget.needs} displayResults={displayResults} />
+            <Category title='Wants' incomes={budget.incomes} items={budget.wants} displayResults={displayResults} />
+            <Category title='Savings' incomes={budget.incomes} items={budget.savings} displayResults={displayResults} />
 
-            <button>Check My Finances!</button>
+            <Message displayResults={displayResults} isBudgetHealthy={isBudgetHealthy} />
+
+            <button onClick={checkFinances}>Check My Finances!</button>
 
             <Modal isOpen={isOpen.instructions} handleClose={updateInstructionsState} >
                 <div className='modal-content'>

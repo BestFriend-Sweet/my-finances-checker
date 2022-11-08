@@ -143,6 +143,12 @@ body {
   color: var(--clr-primary);
 }
 
+.message {
+  color: var(--clr-primary);
+  font-weight: var(--fw-bold);
+  text-align: center;
+}
+
 /* Welcome Layout */
 
 .welcome {
@@ -249,6 +255,7 @@ body {
     'left needs right'
     'left wants right'
     'left savings right'
+    'left message right'
     'left check-btn right'
     'left bottom right';
   gap: var(--space-block-m);
@@ -326,22 +333,15 @@ body {
   grid-area: savings;
 }
 
+.message {
+  grid-area: message;
+  justify-self: center;
+}
+
 @media (min-width: 50em)  {
   .calculator__buttons {
     grid-template-areas:
       'instructions needs wants savings';
-  }
-  .calculator__buttons button:nth-child(1) {
-    grid-area: instructions;
-  }
-  .calculator__buttons button:nth-child(2) {
-    grid-area: needs;
-  }
-  .calculator__buttons button:nth-child(3) {
-    grid-area: wants;
-  }
-  .calculator__buttons button:nth-child(4) {
-    grid-area: savings;
   }
   .calculator {
     grid-template-areas:
@@ -350,30 +350,10 @@ body {
       'left adder adder right'
       'left incomes needs right'
       'left wants savings right'
+      'left message message right'
       'left check-btn check-btn right'
       'left bottom bottom right';
     gap: var(--space-block-d);
-  }
-  .calculator__buttons {
-    grid-area: buttons;
-  }
-  .adder {
-    grid-area: adder;
-  }
-  .calculator .Incomes {
-    grid-area: incomes;
-  }
-  .calculator .Needs {
-    grid-area: needs;
-  }
-  .calculator .Wants {
-    grid-area: wants;
-  }
-  .calculator .Savings {
-    grid-area: savings;
-  }
-  .calculator>button {
-    grid-area: check-btn;
   }
 }
 
@@ -383,6 +363,7 @@ body {
       'top top top aside'
       'adder adder incomes aside'
       'needs wants savings aside'
+      'message message message aside'
       'check-btn check-btn check-btn aside'
       'bottom bottom bottom aside';
     gap: var(--space-block-d);
@@ -396,24 +377,6 @@ body {
   }
   .calculator__buttons {
     display: none;
-  }
-  .adder {
-    grid-area: adder;
-  }
-  .calculator .Incomes {
-    grid-area: incomes;
-  }
-  .calculator .Needs {
-    grid-area: needs;
-  }
-  .calculator .Wants {
-    grid-area: wants;
-  }
-  .calculator .Savings {
-    grid-area: savings;
-  }
-  .calculator>button {
-    grid-area: check-btn;
   }
 }
 
@@ -612,7 +575,6 @@ form button i {
   background-color: var(--clr-text);
   border-radius: 25px;
   padding: 1em;
-  display: none;
 }
 
 .category .line {
