@@ -5,11 +5,11 @@ function LineItem({ item }) {
 
     return (
         <div className='line-item' ref={hoverRef}>
-            <div>
-                <p>{item.name}</p>
+            <div className='line-item__container'>
+                <p className='line-item__name'>{item.name}</p>
                 {isHovered && <i className="fa-solid fa-trash"></i>}
             </div>
-            <p>${item.amount}</p>
+            <p className='line-item__amount'>${item.amount}</p>
         </div>
     )
 }

@@ -8,13 +8,13 @@ function Analysis({ title, incomes, items, displayResults }) {
 
     return (
         <div className='analysis'>
-            <div>
-                <p>Max Amount</p>
-                <p>${maxAmount}</p>
+            <div className='analysis__container'>
+                <p className='analysis__max-amount-title'>Max Amount</p>
+                <p className='analysis__max-amount'>${maxAmount}</p>
             </div>
-            <div>
-                <p>{diffAmounts > 0 ? 'Under Budget' : 'Over Budget'}</p>
-                <p>${diffAmounts}</p>
+            <div className='analysis__container'>
+                <p className='analysis__description'>{diffAmounts > 0 ? 'Under Budget' : 'Over Budget'}</p>
+                <p className='analysis__result'>${diffAmounts}</p>
             </div>
         </div>
     )

@@ -11,12 +11,12 @@ function Incomes({ items }) {
 
     return (
         <div className={`category | Incomes`}>
-            <p className='title'>Incomes</p>
-            <div className="line"></div>   
+            <p className='category__title'>Incomes</p>
+            <div className="category__items"></div>   
             {listItems}
-            <div className='total'>
-                <p>Total</p>
-                <p>${listItemsTotal}</p>
+            <div className='category__total'>
+                <p className='category__total-title'>Total</p>
+                <p className='category__total-amount'>${listItemsTotal}</p>
             </div>
         </div>
     )
