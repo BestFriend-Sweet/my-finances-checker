@@ -2,7 +2,9 @@ body {
   margin: 0;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -42,16 +44,16 @@ body {
   font-family: var(--ff-primary);
 }
 
-.welcome p {
+.welcome__title {
   font-size: var(--fs-500);
   text-align: center;
 }
 
-.welcome p strong {
+.welcome__title strong {
   color: var(--clr-primary);
 }
 
-.welcome button {
+.welcome__btn {
   color: var(--clr-text);
   font-weight: var(--fw-semi-bold);
   font-size: var(--fs-300);
@@ -63,12 +65,12 @@ body {
   font-weight: var(--fw-semi-bold);
 }
 
-.header > p {
+.header__logo {
   font-weight: var(--fw-bold);
 }
 
 .header a, 
-.fundamentals a{
+.fundamentals a {
   color: inherit;
   text-decoration: none;
 }
@@ -78,68 +80,71 @@ body {
   text-align: center;
 }
 
-.calculator__buttons button {
+.calculator__btn {
   color: var(--clr-text);
   font-weight: var(--fw-bold);
 }
 
-.calculator > button {
+.calculator__check-btn {
   color: var(--clr-text);
   font-weight: var(--fw-bold);
 }
 
-.modal-content {
+.modal__content {
   font-size: var(--fs-100);
 }
 
-.modal-title {
+.modal__title {
   font-weight: var(--fw-bold);
 }
 
-.modal-description {
+.modal__description {
   line-height: 22px;
 }
 
-.modal-content button {
+.modal__btn {
   color: var(--clr-text);
   font-family: inherit;
 }
 
-.adder label {
+.adder__name-label,
+.adder__amount-label,
+.adder__category-label {
   font-weight: var(--fw-semi-bold);
 }
 
-.adder .title {
+.adder__title {
   color: var(--clr-primary);
   font-size: var(--fs-300);
   font-weight: var(--fw-bold);
 }
 
-.name-error,
-.amount-error {
+.adder__name-error,
+.adder__amount-error {
   font-size: 0.7rem;
   margin: 0;
   margin-top: 0.3em;
   font-weight: var(--fw-semi-bold);
 }
 
-.category .title {
+.category__title {
   text-align: center;
   color: var(--clr-primary);
   font-size: var(--fs-300);
   font-weight: var(--fw-bold);
 }
 
-.category .line-item > p,
-.category .total p {
+.line-item__amount,
+.category__total-title,
+.category__total-amount {
   font-weight: var(--fw-semi-bold);
 }
 
-.category .analysis {
+.analysis {
   font-weight: var(--fw-semi-bold);
 }
 
-.category .line-item div i {
+.line-item__container i {
   color: var(--clr-primary);
 }
 
@@ -149,7 +154,7 @@ body {
   text-align: center;
 }
 
-/* Welcome Layout */
+/* Layout */
 
 .welcome {
   background-color: var(--clr-bg);
@@ -160,15 +165,13 @@ body {
   align-items: center;
 }
 
-.welcome button {
+.welcome__btn {
   background-color: var(--clr-primary);
   border: none;
   border-radius: 10px;
   padding: 0.3em 1.5em;
   cursor: pointer;
 }
-
-/* Header Layout */
 
 .header {
   display: flex;
@@ -177,11 +180,11 @@ body {
   background-color: var(--clr-primary);
 }
 
-.header > p {
+.header__logo {
   margin-left: var(--space-inline-m);
 }
 
-.header nav ul {
+.header__list {
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -192,43 +195,37 @@ body {
   margin-left: 1em;
 }
 
-.header .fa-solid {
-  display: block;
-}
-
-.header nav li {
+.header__item {
   display: none;
 }
 
 @media (min-width: 32em) {
-  .header .fa-solid {
+  .header__list i {
     display: none;
   }
-  .header nav li {
+  .header__item {
     display: block;
   }
 }
-
-/* Fundamentals Layout */
 
 .fundamentals {
   margin: 3em var(--space-inline-m);
 }
 
-.fundamentals li::marker {
+.fundamentals__item::marker {
   color: var(--clr-primary);
 }
 
-.fundamentals div {
+.fundamentals__container {
   display: flex;
   align-items: center;
 }
 
-.fundamentals div h2 {
+.fundamentals__subtitle {
   order: 1;
 }
 
-.fundamentals div i {
+.fundamentals__container i {
   color: var(--clr-primary);
   font-size: 2.5em;
   margin-right: 0.5em;
@@ -238,12 +235,10 @@ body {
   .fundamentals {
     margin: 3em var(--space-inline-d);
   }
-  .fundamentals p {
+  .fundamentals__description {
     width: 60%;
   }
 }
-
-/* Calculator Layout */
 
 .calculator {
   display: grid;
@@ -261,7 +256,7 @@ body {
   gap: var(--space-block-m);
 }
 
-.calculator>button {
+.calculator__check-btn {
   background-color: var(--clr-primary);
   border: none;
   border-radius: 20px;
@@ -278,7 +273,7 @@ body {
   padding-top: var(--space-block-m);
 }
 
-.calculator__right-menu * {
+.calculator__link {
   cursor: pointer;
 }
 
@@ -292,7 +287,7 @@ body {
   grid-area: buttons;
 }
 
-.calculator__buttons button {
+.calculator__btn {
   border: none;
   background-color: var(--clr-primary);
   padding: 1em 2.3em;
@@ -300,16 +295,16 @@ body {
   cursor: pointer;
 }
 
-.calculator__buttons button:nth-child(1) {
+.calculator__btn:nth-child(1) {
   grid-area: instructions;
 }
-.calculator__buttons button:nth-child(2) {
+.calculator__btn:nth-child(2) {
   grid-area: needs;
 }
-.calculator__buttons button:nth-child(3) {
+.calculator__btn:nth-child(3) {
   grid-area: wants;
 }
-.calculator__buttons button:nth-child(4) {
+.calculator__btn:nth-child(4) {
   grid-area: savings;
 }
 
@@ -317,19 +312,19 @@ body {
   grid-area: adder;
 }
 
-.calculator .Incomes {
+.Incomes {
   grid-area: incomes;
 }
 
-.calculator .Needs {
+.Needs {
   grid-area: needs;
 }
 
-.calculator .Wants {
+.Wants {
   grid-area: wants;
 }
 
-.calculator .Savings {
+.Savings {
   grid-area: savings;
 }
 
@@ -380,8 +375,6 @@ body {
   }
 }
 
-/* Modals */
-
 .modal {
   position: fixed;
   inset: 0;
@@ -393,7 +386,7 @@ body {
   align-items: center;
 }
 
-.modal-content {
+.modal__content {
   background-color: #F8EDF9;
   border-radius: 35px;
   display: flex;
@@ -402,15 +395,15 @@ body {
   max-width: 450px;
 }
 
-.modal-content * {
+.modal__content * {
   margin: 0;
 }
 
-.modal-title {
+.modal__title {
   margin-bottom: 1em;
 }
 
-.modal-content button {
+.modal__btn {
   background-color: var(--clr-primary);
   border-radius: 10px;
   border: none;
@@ -421,12 +414,10 @@ body {
 }
 
 @media (min-width: 50em) {
-  .modal-content {
+  .modal__content {
     max-width: 600px;
   }
 }
-
-/* Adder Layout */
 
 .adder {
   display: flex;
@@ -438,11 +429,11 @@ body {
   width: 300px;
 }
 
-.adder .title {
+.adder__title {
   margin: 0 0 1em 0;
 }
 
-.adder form {
+.adder__form {
   display: grid;
   grid-template-areas:
       'name amount'
@@ -453,50 +444,50 @@ body {
   gap: 0.5em;
 }
 
-#name,
-#amount,
-#category {
+.adder__name-input,
+.adder__amount-input,
+.adder__category-input {
   border-radius: 8px;
   border: none;
   height: 34px;
 }
 
-label[for="name"] {
+.adder__name-label {
   grid-area: name;
 }
 
-#name {
+.adder__name-input {
   grid-area: input-name;
   width: 150px;
 }
 
-.name-error {
+.adder__name-error {
   grid-area: name-error;
 }
 
-label[for="amount"] {
+.adder__amount-label {
   grid-area: amount;
 }
 
-#amount {
+.adder__amount-input {
   grid-area: input-amount;
   width: 80px;
 }
 
-.amount-error {
+.adder__amount-error {
   grid-area: amount-error;
 }
 
-label[for="category"] {
+.adder__category-label {
   grid-area: category;
 }
 
-#category {
+.adder__category-input {
   grid-area: input-category;
   width: 150px;
 }
 
-form button {
+.adder__btn {
   grid-area: button;
   border: none;
   padding: 0;
@@ -505,7 +496,7 @@ form button {
   justify-self: flex-start;
 }
 
-form button i {
+.adder__btn i {
   color: var(--clr-primary);
   font-size: 2.5em;
 }
@@ -514,24 +505,22 @@ form button i {
   .adder {
     width: 450px;
   }
-  .adder form {
+  .adder__form {
     grid-template-areas: 
         'name amount category blank'
         'input-name input-amount input-category button'
         'name-error amount-error space space'; 
   }
-  #amount {
+  .adder__name-input {
     width: 150px;
   }
-  #category {
+  .adder__name-category {
     width: 75px;
   }
-  form button {
+  .adder__btn {
     justify-self: center;
   }
 }
-
-/* Category Layout */
 
 .category {
   background-color: var(--clr-bg);
@@ -542,43 +531,44 @@ form button i {
   text-align: center;
 }
 
-.category .title {
+.category__title {
   margin: 0;
 }
 
-.category .line-item,
-.category .total,
-.category .analysis div {
+.line-item,
+.category__total,
+.analysis__container {
   display: flex;
   justify-content: space-between;
 }
 
-.category .line-item p {
+.line-item__name,
+.line-item__amount {
   margin: 0;
 }
 
-.category .line-item {
+.line-item {
   margin: 0.5em 0;
 }
 
-.category .line-item div {
+.line-item__container {
   display: flex;
   align-items: center;
 }
 
-.category .line-item div i {
+.line-item__container i {
   margin-left: 0.5em;
   cursor: pointer;
 }
 
-.category .analysis {
-  background-color: var(--clr-text);
-  border-radius: 25px;
-  padding: 1em;
-}
-
-.category .line {
+.category__line {
   height: 1px;
   background-color: var(--clr-primary);
   opacity: 0.3;
+}
+
+.analysis {
+  background-color: var(--clr-text);
+  border-radius: 25px;
+  padding: 1em;
 }

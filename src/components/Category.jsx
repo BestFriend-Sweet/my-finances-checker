@@ -12,12 +12,12 @@ function Category({ title, incomes, items, displayResults }) {
 
     return (
         <div className={`category | ${title}`}>
-            <p className='title'>{title}</p>
-            <div className="line"></div>   
+            <p className='category__title'>{title}</p>
+            <div className="category__line"></div>   
             {listItems}
-            <div className='total'>
-                <p>Total</p>
-                <p>${listItemsTotal}</p>
+            <div className='category__total'>
+                <p className='category__total-title'>Total</p>
+                <p className='category__total-amount'>${listItemsTotal}</p>
             </div>
             <Analysis title={title} incomes={incomes} items={items} displayResults={displayResults} />
         </div>

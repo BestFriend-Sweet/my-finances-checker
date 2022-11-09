@@ -14,11 +14,12 @@ function Adder({ updateBudget }) {
 
     return (
         <div className='adder'>
-            <p className='title'>Add Incomes or Expenses</p>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <label htmlFor='name'>Name</label>
+            <p className='adder__title'>Add Incomes or Expenses</p>
+            <form className='adder__form' onSubmit={handleSubmit(onSubmit)}>
+                <label htmlFor='name' className='adder__name-label'>Name</label>
                 <input
                     type='text'
+                    className='adder__name-input'
                     id='name'
                     placeholder='Name of amount'
                     {...register('name', {
@@ -29,10 +30,11 @@ function Adder({ updateBudget }) {
                         }
                     })}
                 />
-                {errors.name && <p className='name-error'>{errors.name.message}</p>}
-                <label htmlFor='amount'>Amount</label>
+                {errors.name && <p className='adder__name-error'>{errors.name.message}</p>}
+                <label htmlFor='amount' className='adder__amount-label'>Amount</label>
                 <input
                     type='text'
+                    className='adder__amount-input'
                     id='amount'
                     placeholder='Amount in $'
                     {...register('amount', {
@@ -51,9 +53,10 @@ function Adder({ updateBudget }) {
                         }
                     })}
                 />
-                {errors.amount && <p className='amount-error'>{errors.amount.message}</p>}
-                <label htmlFor='category'>Category</label>
+                {errors.amount && <p className='adder__amount-error'>{errors.amount.message}</p>}
+                <label htmlFor='category' className='adder__category-label'>Category</label>
                 <select
+                    className='adder__category-input'
                     id='category'
                     {...register('category', { required: true })}
                 >
@@ -62,7 +65,7 @@ function Adder({ updateBudget }) {
                     <option value='wants'>Wants</option>
                     <option value='savings'>Savings</option>
                 </select>
-                <button><i className="fa-solid fa-circle-plus"></i></button>
+                <button className='adder__btn'><i className="fa-solid fa-circle-plus"></i></button>
             </form>
         </div>
     )
