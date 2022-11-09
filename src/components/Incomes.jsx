@@ -12,7 +12,7 @@ function Incomes({ items }) {
     return (
         <div className={`category | Incomes`}>
             <p className='category__title'>Incomes</p>
-            <div className="category__items"></div>   
+            <div className="category__line"></div>   
             {listItems}
             <div className='category__total'>
                 <p className='category__total-title'>Total</p>
