@@ -1,6 +1,5 @@
 import Modals from '../components/Modals'
 import Adder from '../components/Adder'
-import Incomes from '../components/Incomes'
 import Category from '../components/Category'
 import Message from '../components/Message'
 import { useState } from 'react'
@@ -90,6 +89,13 @@ function Calculator() {
         setIsBudgetHealthy(false)
     }
 
+    function removeFromBudget(item) {
+        setBudget(prev => {
+            return {...prev, [item.category]: prev[item.category].filter(i => i.id !== item.id)}
+        })
+        resetResults()
+    }
+
     return (
         <main className='calculator'>
             <section className='calculator__buttons'>
@@ -107,10 +113,10 @@ function Calculator() {
             </aside>
 
             <Adder updateBudget={updateBudget} resetResults={resetResults} />
-            <Incomes items={budget.incomes} />
-            <Category title='Needs' incomes={budget.incomes} items={budget.needs} displayResults={displayResults} />
-            <Category title='Wants' incomes={budget.incomes} items={budget.wants} displayResults={displayResults} />
-            <Category title='Savings' incomes={budget.incomes} items={budget.savings} displayResults={displayResults} />
+            <Category title='Incomes' items={budget.incomes} removeFromBudget={removeFromBudget} />
+            <Category title='Needs' incomes={budget.incomes} items={budget.needs} displayResults={displayResults} removeFromBudget={removeFromBudget} />
+            <Category title='Wants' incomes={budget.incomes} items={budget.wants} displayResults={displayResults} removeFromBudget={removeFromBudget} />
+            <Category title='Savings' incomes={budget.incomes} items={budget.savings} displayResults={displayResults} removeFromBudget={removeFromBudget} />
 
             <Message displayResults={displayResults} isBudgetHealthy={isBudgetHealthy} />
 
