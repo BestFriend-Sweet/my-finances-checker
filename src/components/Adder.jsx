@@ -1,10 +1,12 @@
 import { useForm }  from 'react-hook-form'
 import { useEffect } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 function Adder({ updateBudget, resetResults }) {
     const { register, handleSubmit, reset, formState, formState: { errors } } = useForm()
     
     function onSubmit(data) {
+        data.id = uuidv4()
         updateBudget(data)
         resetResults()
     }

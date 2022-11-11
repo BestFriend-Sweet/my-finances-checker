@@ -1,9 +1,9 @@
 import LineItem from './LineItem'
 import Analysis from './Analysis'
 
-function Category({ title, incomes, items, displayResults }) {
+function Category({ title, incomes, items, displayResults, removeFromBudget }) {
     const listItems = items.map((item, index) => {
-        return <LineItem key={index} item={item} />
+        return <LineItem key={index} item={item} removeFromBudget={removeFromBudget} />
     })
 
     const listItemsTotal = items.reduce((prev, curr) => {
