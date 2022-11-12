@@ -14,11 +14,11 @@ img {
 }
 
 :root {
-  --ff-primary: 'Roboto', sans-serif;
+  --ff-primary: "Roboto", sans-serif;
 
-  --clr-primary: #6D0070;
-  --clr-bg: #F8EDF9;
-  --clr-bg-modal: #D9D9D9;
+  --clr-primary: #6d0070;
+  --clr-bg: #f8edf9;
+  --clr-bg-modal: #d9d9d9;
   --clr-text: #ffffff;
 
   --fs-100: 0.85rem;
@@ -68,7 +68,7 @@ body {
   font-weight: var(--fw-bold);
 }
 
-.header a, 
+.header a,
 .fundamentals a {
   color: inherit;
   text-decoration: none;
@@ -144,6 +144,11 @@ body {
   color: var(--clr-primary);
   font-weight: var(--fw-bold);
   text-align: center;
+}
+
+.analysis__max-amount-title,
+.analysis__description {
+  font-style: italic;
 }
 
 /* Layout */
@@ -234,16 +239,16 @@ body {
 
 .calculator {
   display: grid;
-  grid-template-areas: 
-    'left top right'
-    'left adder right'
-    'left incomes right'
-    'left needs right'
-    'left wants right'
-    'left savings right'
-    'left message right'
-    'left check-btn right'
-    'left bottom right';
+  grid-template-areas:
+    "left top right"
+    "left adder right"
+    "left incomes right"
+    "left needs right"
+    "left wants right"
+    "left savings right"
+    "left message right"
+    "left check-btn right"
+    "left bottom right";
   gap: var(--space-block-m);
 }
 
@@ -283,29 +288,29 @@ body {
   justify-self: center;
 }
 
-@media (min-width: 50em)  {
+@media (min-width: 50em) {
   .calculator {
     grid-template-areas:
-      'left top top right'
-      'left buttons buttons right'
-      'left adder adder right'
-      'left incomes needs right'
-      'left wants savings right'
-      'left message message right'
-      'left check-btn check-btn right'
-      'left bottom bottom right';
+      "left top top right"
+      "left buttons buttons right"
+      "left adder adder right"
+      "left incomes needs right"
+      "left wants savings right"
+      "left message message right"
+      "left check-btn check-btn right"
+      "left bottom bottom right";
   }
 }
 
 @media (min-width: 75em) {
   .calculator {
     grid-template-areas:
-      'top top top'
-      'adder adder incomes'
-      'needs wants savings'
-      'message message message'
-      'check-btn check-btn check-btn'
-      'bottom bottom bottom';
+      "top top top"
+      "adder adder incomes"
+      "needs wants savings"
+      "message message message"
+      "check-btn check-btn check-btn"
+      "bottom bottom bottom";
   }
 }
 
@@ -321,7 +326,7 @@ body {
 }
 
 .modal__content {
-  background-color: #F8EDF9;
+  background-color: #f8edf9;
   border-radius: 35px;
   display: flex;
   flex-direction: column;
@@ -383,11 +388,11 @@ body {
 .adder__form {
   display: grid;
   grid-template-areas:
-      'name amount'
-      'input-name input-amount'
-      'name-error amount-error'
-      'category blank'
-      'input-category button';
+    "name amount"
+    "input-name input-amount"
+    "name-error amount-error"
+    "category blank"
+    "input-category button";
   gap: 0.5em;
 }
 
@@ -453,10 +458,10 @@ body {
     width: 450px;
   }
   .adder__form {
-    grid-template-areas: 
-        'name amount category blank'
-        'input-name input-amount input-category button'
-        'name-error amount-error space space'; 
+    grid-template-areas:
+      "name amount category blank"
+      "input-name input-amount input-category button"
+      "name-error amount-error space space";
   }
   .adder__name-input {
     width: 150px;
@@ -524,9 +529,4 @@ body {
   background-color: var(--clr-text);
   border-radius: 25px;
   padding: 1em;
-}
-
-.analysis__max-amount-title,
-.analysis__description {
-  font-style: italic;
 }
