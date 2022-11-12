@@ -42,27 +42,9 @@ function Calculator() {
         }
     }
 
-    function updateInstructionsState() {
+    function updateModalState(category) {
         setIsOpen(prev => {
-            return {...prev, instructions: !prev.instructions }
-        })
-    }
-
-    function updateNeedsState() {
-        setIsOpen(prev => {
-            return {...prev, needs: !prev.needs}
-        })
-    }
-
-    function updateWantsState() {
-        setIsOpen(prev => {
-            return {...prev, wants: !prev.wants}
-        })
-    }
-
-    function updateSavingsState() {
-        setIsOpen(prev => {
-            return {...prev, savings: !prev.savings}
+            return {...prev, [category]: !prev[category]}
         })
     }
 
@@ -98,36 +80,50 @@ function Calculator() {
 
     return (
         <main className='calculator'>
-            <section className='calculator__buttons'>
-                <button className='calculator__btn' onClick={updateInstructionsState}>Instructions</button>
-                <button className='calculator__btn' onClick={updateNeedsState}>Tips Needs</button>
-                <button className='calculator__btn' onClick={updateWantsState}>Tips Wants</button>
-                <button className='calculator__btn' onClick={updateSavingsState}>Tips Savings</button>
-            </section>
-
-            <aside className='calculator__right-menu'>
-                <p className='calculator__link' onClick={updateInstructionsState}>Instructions</p>
-                <p className='calculator__link' onClick={updateNeedsState}>Tips Needs</p>
-                <p className='calculator__link' onClick={updateWantsState}>Tips Wants</p>
-                <p className='calculator__link' onClick={updateSavingsState}>Tips Savings</p>
-            </aside>
-
-            <Adder updateBudget={updateBudget} resetResults={resetResults} />
-            <Category title='Incomes' items={budget.incomes} removeFromBudget={removeFromBudget} />
-            <Category title='Needs' incomes={budget.incomes} items={budget.needs} displayResults={displayResults} removeFromBudget={removeFromBudget} />
-            <Category title='Wants' incomes={budget.incomes} items={budget.wants} displayResults={displayResults} removeFromBudget={removeFromBudget} />
-            <Category title='Savings' incomes={budget.incomes} items={budget.savings} displayResults={displayResults} removeFromBudget={removeFromBudget} />
-
-            <Message displayResults={displayResults} isBudgetHealthy={isBudgetHealthy} />
-
+            <Adder
+                title='instructions'
+                updateBudget={updateBudget}
+                resetResults={resetResults} 
+                updateModalState={updateModalState}
+            />
+            <Category 
+                title='incomes' 
+                items={budget.incomes} 
+                removeFromBudget={removeFromBudget} 
+                updateModalState={updateModalState}
+            />
+            <Category 
+                title='needs' 
+                incomes={budget.incomes} 
+                items={budget.needs} 
+                displayResults={displayResults} 
+                removeFromBudget={removeFromBudget} 
+                updateModalState={updateModalState}
+            />
+            <Category 
+                title='wants' 
+                incomes={budget.incomes} 
+                items={budget.wants} 
+                displayResults={displayResults} 
+                removeFromBudget={removeFromBudget} 
+                updateModalState={updateModalState}
+            />
+            <Category 
+                title='savings' 
+                incomes={budget.incomes} 
+                items={budget.savings} 
+                displayResults={displayResults} 
+                removeFromBudget={removeFromBudget} 
+                updateModalState={updateModalState}
+            />
+            <Message
+                displayResults={displayResults}
+                isBudgetHealthy={isBudgetHealthy}
+            />
             <button className='calculator__check-btn' onClick={checkFinances}>Check My Finances!</button>
-
             <Modals
                 isOpen={isOpen}
-                updateInstructionsState={updateInstructionsState}
-                updateNeedsState={updateNeedsState}
-                updateWantsState={updateWantsState}
-                updateSavingsState={updateSavingsState}
+                updateModalState={updateModalState}
             />
         </main>
     )

@@ -2,7 +2,7 @@ import { useForm }  from 'react-hook-form'
 import { useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
-function Adder({ updateBudget, resetResults }) {
+function Adder({ title, updateBudget, resetResults, updateModalState }) {
     const { register, handleSubmit, reset, formState, formState: { errors } } = useForm()
     
     function onSubmit(data) {
@@ -17,7 +17,10 @@ function Adder({ updateBudget, resetResults }) {
 
     return (
         <div className='adder'>
-            <p className='adder__title'>Add Incomes or Expenses</p>
+            <div className='adder__title'>
+                <p className='adder__title-name'>Add Incomes or Expenses</p>
+                <i class="fa-solid fa-circle-info" onClick={() => updateModalState(title)}></i>
+            </div>
             <form className='adder__form' onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor='name' className='adder__name-label'>Name</label>
                 <input
