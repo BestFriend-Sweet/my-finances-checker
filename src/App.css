@@ -525,3 +525,8 @@ body {
   border-radius: 25px;
   padding: 1em;
 }
+
+.analysis__max-amount-title,
+.analysis__description {
+  font-style: italic;
+}
