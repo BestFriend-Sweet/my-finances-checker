@@ -35,7 +35,6 @@ img {
   --space-inline-d: 3.125em;
 
   --space-block-m: 2em;
-  --space-block-d: 4em;
 }
 
 /* Typography */
@@ -75,16 +74,6 @@ body {
   text-decoration: none;
 }
 
-.calculator__right-menu {
-  font-weight: var(--fw-bold);
-  text-align: center;
-}
-
-.calculator__btn {
-  color: var(--clr-text);
-  font-weight: var(--fw-bold);
-}
-
 .calculator__check-btn {
   color: var(--clr-text);
   font-weight: var(--fw-bold);
@@ -113,10 +102,16 @@ body {
   font-weight: var(--fw-semi-bold);
 }
 
-.adder__title {
+.adder__title-name,
+.category__title-name {
   color: var(--clr-primary);
   font-size: var(--fs-300);
   font-weight: var(--fw-bold);
+}
+
+.adder__title i,
+.category__title i {
+  color: var(--clr-primary);
 }
 
 .adder__name-error,
@@ -127,11 +122,8 @@ body {
   font-weight: var(--fw-semi-bold);
 }
 
-.category__title {
+.category__title-name {
   text-align: center;
-  color: var(--clr-primary);
-  font-size: var(--fs-300);
-  font-weight: var(--fw-bold);
 }
 
 .line-item__amount,
@@ -244,7 +236,6 @@ body {
   display: grid;
   grid-template-areas: 
     'left top right'
-    'left buttons right'
     'left adder right'
     'left incomes right'
     'left needs right'
@@ -267,64 +258,23 @@ body {
   grid-area: check-btn;
 }
 
-.calculator__right-menu {
-  display: none;
-  background-color: rgba(109, 0, 112, 0.5);
-  padding-top: var(--space-block-m);
-}
-
-.calculator__link {
-  cursor: pointer;
-}
-
-.calculator__buttons {
-  display: grid;
-  grid-template-areas: 
-    'instructions needs'
-    'wants savings';
-  gap: 1em;
-  justify-items: center;
-  grid-area: buttons;
-}
-
-.calculator__btn {
-  border: none;
-  background-color: var(--clr-primary);
-  padding: 1em 2.3em;
-  border-radius: 100px;
-  cursor: pointer;
-}
-
-.calculator__btn:nth-child(1) {
-  grid-area: instructions;
-}
-.calculator__btn:nth-child(2) {
-  grid-area: needs;
-}
-.calculator__btn:nth-child(3) {
-  grid-area: wants;
-}
-.calculator__btn:nth-child(4) {
-  grid-area: savings;
-}
-
 .adder {
   grid-area: adder;
 }
 
-.Incomes {
+.incomes {
   grid-area: incomes;
 }
 
-.Needs {
+.needs {
   grid-area: needs;
 }
 
-.Wants {
+.wants {
   grid-area: wants;
 }
 
-.Savings {
+.savings {
   grid-area: savings;
 }
 
@@ -334,10 +284,6 @@ body {
 }
 
 @media (min-width: 50em)  {
-  .calculator__buttons {
-    grid-template-areas:
-      'instructions needs wants savings';
-  }
   .calculator {
     grid-template-areas:
       'left top top right'
@@ -348,30 +294,18 @@ body {
       'left message message right'
       'left check-btn check-btn right'
       'left bottom bottom right';
-    gap: var(--space-block-d);
   }
 }
 
 @media (min-width: 75em) {
   .calculator {
     grid-template-areas:
-      'top top top aside'
-      'adder adder incomes aside'
-      'needs wants savings aside'
-      'message message message aside'
-      'check-btn check-btn check-btn aside'
-      'bottom bottom bottom aside';
-    gap: var(--space-block-d);
-  }
-  .calculator__right-menu {
-    grid-area: aside;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-  }
-  .calculator__buttons {
-    display: none;
+      'top top top'
+      'adder adder incomes'
+      'needs wants savings'
+      'message message message'
+      'check-btn check-btn check-btn'
+      'bottom bottom bottom';
   }
 }
 
@@ -430,7 +364,20 @@ body {
 }
 
 .adder__title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   margin: 0 0 1em 0;
+}
+
+.adder__title-name {
+  margin: 0;
+}
+
+.adder__title i,
+.category__title i {
+  margin-left: 1em;
+  cursor: pointer;
 }
 
 .adder__form {
@@ -532,6 +479,12 @@ body {
 }
 
 .category__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category__title-name {
   margin: 0;
 }
 
