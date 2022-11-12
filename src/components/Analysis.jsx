@@ -12,7 +12,7 @@ function Analysis({ title, incomes, items, displayResults }) {
                 <p className='analysis__max-amount-title'>Max Amount</p>
                 <p className='analysis__max-amount'>${maxAmount}</p>
             </div>
-            <div className='analysis__container' style= {diffAmounts >= 0 ? {color: "green"} : {color: "red"}}>
+            <div className='analysis__container' style= {diffAmounts > 0 ? {color: "green"} : diffAmounts < 0 ? {color: "red"} : {color: "black"}}>
                 <p className='analysis__description'>{diffAmounts > 0 ? 'Under Budget' : 'Over Budget'}</p>
                 <p className='analysis__result'>{diffAmounts >= 0 ? "$" + diffAmounts : "-$" + Math.abs(diffAmounts)}</p>
             </div>
