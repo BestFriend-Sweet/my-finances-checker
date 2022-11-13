@@ -1,9 +1,9 @@
-function Analysis({ title, incomes, items, displayResults }) {
-    if (!displayResults) return null
+function Analysis({ title, budget, displayResults }) {
+    if (!displayResults || title === 'incomes') return null
     
-    const percentage = title === 'Needs' ? 0.5 : title === 'Wants' ? 0.3 : 0.2
-    const maxAmount = incomes.reduce((prev, current) => prev + Number(current.amount), 0) * percentage
-    const totalItems = items.reduce((prev, current) => prev + Number(current.amount), 0)
+    const percentage = title === 'needs' ? 0.5 : title === 'wants' ? 0.3 : 0.2
+    const maxAmount = budget.incomes.reduce((prev, current) => prev + Number(current.amount), 0) * percentage
+    const totalItems = budget[title].reduce((prev, current) => prev + Number(current.amount), 0)
     const diffAmounts = maxAmount - totalItems
 
     return (

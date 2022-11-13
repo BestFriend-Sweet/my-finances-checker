@@ -21,25 +21,23 @@ function Calculator() {
     )
     const [displayResults, setDisplayResults] = useState(false)
     const [isBudgetHealthy, setIsBudgetHealthy] = useState(false)
+    const categories = ['incomes', 'needs', 'wants', 'savings']
+
+    const listCategories = categories.map(category => {
+        return <Category
+                    key={category}
+                    title={category}
+                    budget={budget}
+                    displayResults={displayResults}
+                    removeFromBudget={removeFromBudget}
+                    updateModalState={updateModalState}
+                />
+    })
     
     function updateBudget(formData) {
-        if (formData.category === 'incomes') {
-            setBudget(prevBudget => { 
-                return {...prevBudget, incomes: [...prevBudget.incomes, formData]}
-            })
-        } else if (formData.category === 'needs') {
-            setBudget(prevBudget => {
-                return { ...prevBudget, needs: [...prevBudget.needs, formData] }
-            })
-        } else if (formData.category === 'wants') {
-            setBudget(prevBudget => {
-                return { ...prevBudget, wants: [...prevBudget.wants, formData] }
-            })
-        } else if (formData.category === 'savings') {
-            setBudget(prevBudget => {
-                return { ...prevBudget, savings: [...prevBudget.savings, formData] }
-            })
-        }
+        setBudget(prevBudget => { 
+            return {...prevBudget, [formData.category]: [...prevBudget[formData.category], formData]}
+        })
     }
 
     function updateModalState(category) {
@@ -86,36 +84,7 @@ function Calculator() {
                 resetResults={resetResults} 
                 updateModalState={updateModalState}
             />
-            <Category 
-                title='incomes' 
-                items={budget.incomes} 
-                removeFromBudget={removeFromBudget} 
-                updateModalState={updateModalState}
-            />
-            <Category 
-                title='needs' 
-                incomes={budget.incomes} 
-                items={budget.needs} 
-                displayResults={displayResults} 
-                removeFromBudget={removeFromBudget} 
-                updateModalState={updateModalState}
-            />
-            <Category 
-                title='wants' 
-                incomes={budget.incomes} 
-                items={budget.wants} 
-                displayResults={displayResults} 
-                removeFromBudget={removeFromBudget} 
-                updateModalState={updateModalState}
-            />
-            <Category 
-                title='savings' 
-                incomes={budget.incomes} 
-                items={budget.savings} 
-                displayResults={displayResults} 
-                removeFromBudget={removeFromBudget} 
-                updateModalState={updateModalState}
-            />
+            {listCategories}
             <Message
                 displayResults={displayResults}
                 isBudgetHealthy={isBudgetHealthy}
