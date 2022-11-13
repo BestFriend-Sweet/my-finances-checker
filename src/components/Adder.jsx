@@ -19,7 +19,7 @@ function Adder({ title, updateBudget, resetResults, updateModalState }) {
         <div className='adder'>
             <div className='adder__title'>
                 <p className='adder__title-name'>Add Incomes or Expenses</p>
-                <i class="fa-solid fa-circle-info" onClick={() => updateModalState(title)}></i>
+                <i className="fa-solid fa-circle-info" onClick={() => updateModalState(title)}></i>
             </div>
             <form className='adder__form' onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor='name' className='adder__name-label'>Name</label>
