@@ -4,7 +4,7 @@ This is a calculator to help people gauge how healthy their monthly finances are
 
 ## Preview
 
-![Project Layout](./src/assets/preview.gif)
+![Project Layout](./src/assets/preview.jpg)
 
 ## Project walkthrough
 
