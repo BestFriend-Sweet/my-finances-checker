@@ -4,7 +4,7 @@ This is a calculator to help people gauge how healthy their monthly finances are
 
 ## Preview
 
-![Project Layout](./src/assets/preview.png)
+![Project Layout](./src/assets/preview.gif)
 
 ## Project walkthrough
 
@@ -14,7 +14,7 @@ This is the first page you will see when you open the app. Not much in here, if 
 
 ### Fundamentals Page
 
-Here you can find the theory behind this budgeting method. This section is entirely based on an [article](https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator) from Nerd Wallet, for more information please visit their site.
+Here you can find the explanation of this budgeting method. This section is entirely based on an [article](https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator) from NerdWallet, for more information please visit their site.
 
 ### Calculator
 
@@ -22,7 +22,7 @@ Here is where the magic happens.
 
 First you will need to add incomes and expenses. In here the goal is to have everything listed, the more accurate the information the more realistic the final result will be.
 
-On the side you have a small section with useful tips about the calculator.
+You can click on the information icon on each category to display some useful tips.
 
 If you made a mistake and the name or number for a certain income or expense is wrong you can delete it and add it one more time with the correct info.
 
