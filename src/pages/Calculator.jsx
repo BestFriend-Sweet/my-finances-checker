@@ -3,22 +3,11 @@ import Adder from '../components/Adder'
 import Category from '../components/Category'
 import Message from '../components/Message'
 import { useState } from 'react'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 
 function Calculator() {
-    const [isOpen, setIsOpen] = useState({
-        instructions: false,
-        needs: false,
-        wants: false,
-        savings: false
-    })
-    const [budget, setBudget] = useState(
-        {
-            incomes: [],
-            needs: [],
-            wants: [],
-            savings: []
-        }
-    )
+    const [isOpen, setIsOpen] = useState({ instructions: false, needs: false, wants: false, savings: false })
+    const [budget, setBudget] = useLocalStorage('budget', { incomes: [], needs: [], wants: [], savings: [] })
     const [displayResults, setDisplayResults] = useState(false)
     const [isBudgetHealthy, setIsBudgetHealthy] = useState(false)
     const categories = ['incomes', 'needs', 'wants', 'savings']
