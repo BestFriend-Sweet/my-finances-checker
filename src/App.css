@@ -41,6 +41,12 @@ input, select {
   --space-block-m: 2em;
 }
 
+/* Utility Classes */
+
+.selected {
+  color: var(--clr-primary);
+}
+
 /* Typography */
 
 body {
@@ -78,6 +84,12 @@ body {
   text-decoration: none;
 }
 
+.languages__en-btn,
+.languages__es-btn {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-bold);
+}
+
 .calculator__check-btn {
   color: var(--clr-text);
   font-weight: var(--fw-bold);
@@ -98,6 +110,7 @@ body {
 .modal__btn {
   color: var(--clr-text);
   font-family: inherit;
+  font-weight: var(--fw-bold);
 }
 
 .adder__name-label,
@@ -209,6 +222,21 @@ body {
   }
 }
 
+.languages {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.1em;
+}
+
+.languages__en-btn,
+.languages__es-btn {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .fundamentals {
   margin: 3em var(--space-inline-m);
 }
@@ -249,6 +277,7 @@ body {
   display: grid;
   grid-template-areas:
     "left top right"
+    "left languages right"
     "left adder right"
     "left incomes right"
     "left needs right"
@@ -269,6 +298,11 @@ body {
   display: block;
   margin: 0 auto;
   grid-area: check-btn;
+}
+
+.languages {
+  grid-area: languages;
+  justify-self: center;
 }
 
 .adder {
@@ -300,7 +334,7 @@ body {
   .calculator {
     grid-template-areas:
       "left top top right"
-      "left buttons buttons right"
+      "left languages languages right"
       "left adder adder right"
       "left incomes needs right"
       "left wants savings right"
@@ -314,6 +348,7 @@ body {
   .calculator {
     grid-template-areas:
       "top top top"
+      "languages languages languages"
       "adder adder incomes"
       "needs wants savings"
       "message message message"
