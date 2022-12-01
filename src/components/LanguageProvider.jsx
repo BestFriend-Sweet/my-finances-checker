@@ -1,5 +1,6 @@
-import { useState, createContext, useContext } from 'react'
+import { createContext, useContext } from 'react'
 import dictionaryList from '../languages/language.js'
+import { useLocalStorage } from '../hooks/useLocalStorage.jsx'
 
 const LanguageContext = createContext({
     userLanguage: 'en',
@@ -7,7 +8,7 @@ const LanguageContext = createContext({
 })
 
 function LanguageProvider({ children }) {
-    const [userLanguage, setUserLanguage] = useState('es')
+    const [userLanguage, setUserLanguage] = useLocalStorage('lang', 'en')
     const provider = {
         userLanguage,
         dictionary: dictionaryList[userLanguage],
@@ -26,4 +27,4 @@ function Text({ tid }) {
     return languageContext.dictionary[tid] || tid
 }
 
-export { LanguageProvider, Text } 
+export { LanguageContext, LanguageProvider, Text } 

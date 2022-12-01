@@ -2,8 +2,10 @@ import Modals from '../components/Modals'
 import Adder from '../components/Adder'
 import Category from '../components/Category'
 import Message from '../components/Message'
+import LanguageSelector from '../components/LanguageSelector'
 import { useState } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
+import { Text } from '../components/LanguageProvider'
 
 function Calculator() {
     const [isOpen, setIsOpen] = useState({ instructions: false, needs: false, wants: false, savings: false })
@@ -24,8 +26,8 @@ function Calculator() {
     })
     
     function updateBudget(formData) {
-        setBudget(prevBudget => { 
-            return {...prevBudget, [formData.category]: [...prevBudget[formData.category], formData]}
+        setBudget(prev => { 
+            return {...prev, [formData.category]: [...prev[formData.category], formData]}
         })
     }
 
@@ -67,6 +69,7 @@ function Calculator() {
 
     return (
         <main className='calculator'>
+            <LanguageSelector />
             <Adder
                 title='instructions'
                 updateBudget={updateBudget}
@@ -78,7 +81,7 @@ function Calculator() {
                 displayResults={displayResults}
                 isBudgetHealthy={isBudgetHealthy}
             />
-            <button className='calculator__check-btn' onClick={checkFinances}>Check My Finances!</button>
+            <button className='calculator__check-btn' onClick={checkFinances}><Text tid='checkButton' /></button>
             <Modals
                 isOpen={isOpen}
                 updateModalState={updateModalState}
