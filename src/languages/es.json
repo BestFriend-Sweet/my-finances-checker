@@ -36,7 +36,7 @@
     "addNameInput": "Nombre",
     "addNameInputPlaceholder": "Alquiler casa",
     "addAmountInput": "Cantidad",
-    "addAmountInputPlaceholder": "S/ 2000",
+    "addAmountInputPlaceholder": "S/2000",
     "addCategorySelector": "Categoría",
     "addCategoryValue1": "Ingresos",
     "addCategoryValue2": "Necesidades",
@@ -74,5 +74,5 @@
     "overBudget": "Por encima",
     "underBudget": "Por debajo",
     "goodResultMessage": "!Felicitaciones 🎉🥳🍾! Tu presupuesto mensual está bien distribuido.",
-    "badResultMessage": "El objetivo debería ser tener Necesidades y Deseos por debajo de la cantidad máxima y Ahorros por encima o igual de la cantidad mínima. Se pueden añadir ingresos, aumentar ahorros o cortar algunos gastos."
+    "badResultMessage": "El objetivo debería ser tener necesidades y deseos por debajo de la cantidad máxima y ahorros igual o por encima de la cantidad mínima. Se pueden añadir ingresos y ahorros o se pueden disminuir gastos."
 }
