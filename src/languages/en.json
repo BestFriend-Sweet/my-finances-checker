@@ -74,5 +74,5 @@
     "overBudget": "Over Budget",
     "underBudget": "Under Budget",
     "goodResultMessage": "Congratulations 🎉🥳🍾! Your monthly budget is well distributed.",
-    "badResultMessage": "The goal should be to have Needs and Wants under the max amount and Savings under the min amount. Incomes can be added, savings can be added or expenses can be cut."
+    "badResultMessage": "The goal should be to have Needs and Wants under the max amount and Savings over or equal the min amount. Incomes can be added, savings can be added or expenses can be cut."
 }

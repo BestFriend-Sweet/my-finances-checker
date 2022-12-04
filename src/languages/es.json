@@ -74,5 +74,5 @@
     "overBudget": "Por encima",
     "underBudget": "Por debajo",
     "goodResultMessage": "!Felicitaciones 🎉🥳🍾! Tu presupuesto mensual está bien distribuido.",
-    "badResultMessage": "El objetivo debería ser tener Necesidades y Deseos por debajo de la cantidad máxima y Ahorros por encima de la cantidad mínima. Se pueden añadir ingresos, aumentar ahorros o cortar algunos gastos."
+    "badResultMessage": "El objetivo debería ser tener Necesidades y Deseos por debajo de la cantidad máxima y Ahorros por encima o igual de la cantidad mínima. Se pueden añadir ingresos, aumentar ahorros o cortar algunos gastos."
 }
