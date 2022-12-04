@@ -225,7 +225,6 @@ body {
 .languages {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   gap: 0.1em;
 }
 
@@ -302,7 +301,7 @@ body {
 
 .languages {
   grid-area: languages;
-  justify-self: center;
+  justify-self: flex-end;
 }
 
 .adder {
@@ -342,18 +341,21 @@ body {
       "left check-btn check-btn right"
       "left bottom bottom right";
   }
+  .message {
+    width: 50%;
+  }
 }
 
 @media (min-width: 75em) {
   .calculator {
     grid-template-areas:
-      "top top top"
-      "languages languages languages"
-      "adder adder incomes"
-      "needs wants savings"
-      "message message message"
-      "check-btn check-btn check-btn"
-      "bottom bottom bottom";
+      "left top top top right"
+      "left languages languages languages right"
+      "left adder adder incomes right"
+      "left needs wants savings right"
+      "left message message message right"
+      "left check-btn check-btn check-btn right"
+      "left bottom bottom bottom right";
   }
 }
 
