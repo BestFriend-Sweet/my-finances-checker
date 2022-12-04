@@ -7,7 +7,7 @@ function LanguageSelector() {
     return (
         <div className="languages">
             <button className={`languages__en-btn | ${userLanguage === 'en' && 'selected'}`} onClick={() => userLanguageChange('en')}>USA</button>
-            <button className={`languages__es-btn | ${userLanguage === 'es' && 'selected'}`} onClick={() => userLanguageChange('es')}>Perú</button>
+            <button className={`languages__es-btn | ${userLanguage === 'es' && 'selected'}`} onClick={() => userLanguageChange('es')}>Español</button>
         </div>
     )
 }

@@ -15,7 +15,7 @@
     "fundamentalsNeedsExample2": "Comida.",
     "fundamentalsNeedsExample3": "Transporte.",
     "fundamentalsNeedsExample4": "Seguros.",
-    "fundamentalsNeedsExample5": "Pagos mínimos de préstamos. Cualquier monto mayor al mínimo va en ahorros.",
+    "fundamentalsNeedsExample5": "Pagos mínimos de préstamos. Cualquier extra va dirigido a los ahorros.",
     "fundamentalsNeedsExample6": "Gastos que necesitas cubrir para poder trabajar, guardería para niños por ejemplo.",
     "fundamentalsWantsTitle": "30% de tus ingresos: deseos.",
     "fundamentalsWantsDescription": "Los deseos son los extras que hacemos por diversión. No son esenciales ya que se puede vivir sin ellos. Aquí algunos ejemplos:",
@@ -35,7 +35,7 @@
     "addTitle": "Añadir ingresos o gastos",
     "addNameInput": "Nombre",
     "addNameInputPlaceholder": "Alquiler casa",
-    "addAmountInput": "Monto",
+    "addAmountInput": "Cantidad",
     "addAmountInputPlaceholder": "S/ 2000",
     "addCategorySelector": "Categoría",
     "addCategoryValue1": "Ingresos",
@@ -69,9 +69,10 @@
     "savingsModalDescription": "Los ahorros son la preparación para el futuro. Pero primero debemos pagar las deudas.",
     "savingsModalExample": "Por ejemplo: fondos de emergencia, ahorrar para la jublicación, pagar deudas.",
     "closeModalBtn": "Cerrar",
-    "maxAmount": "Monto Máximo",
+    "maxAmount": "Cantidad Máxima",
+    "minAmount": "Cantidad Mínima",
     "overBudget": "Por encima",
     "underBudget": "Por debajo",
-    "goodResultMessage": "!Felicitaciones 🎉🥳🍾! Tu presupuesto mensual esta bien distribuido.",
-    "badResultMessage": "El objetivo debería ser tener cada categoría por debajo del monto máximo, se pueden añadir ingresos o cortar algunos gastos."
+    "goodResultMessage": "!Felicitaciones 🎉🥳🍾! Tu presupuesto mensual está bien distribuido.",
+    "badResultMessage": "El objetivo debería ser tener Necesidades y Deseos por debajo de la cantidad máxima y Ahorros por encima o igual de la cantidad mínima. Se pueden añadir ingresos, aumentar ahorros o cortar algunos gastos."
 }

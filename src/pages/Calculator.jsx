@@ -50,7 +50,7 @@ function Calculator() {
         const wantsResult = budget.incomes.reduce((prev, curr) => prev + Number(curr.amount), 0) * 0.3 - budget.wants.reduce((prev, curr) => prev + Number(curr.amount), 0)
         const savingsResult = budget.incomes.reduce((prev, curr) => prev + Number(curr.amount), 0) * 0.2 - budget.savings.reduce((prev, curr) => prev + Number(curr.amount), 0)
 
-        if (needsResult >= 0 && wantsResult >= 0 && savingsResult >= 0) {
+        if (needsResult >= 0 && wantsResult >= 0 && savingsResult <= 0) {
             setIsBudgetHealthy(true)
         }
     }
