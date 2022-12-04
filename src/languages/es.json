@@ -69,9 +69,10 @@
     "savingsModalDescription": "Los ahorros son la preparación para el futuro. Pero primero debemos pagar las deudas.",
     "savingsModalExample": "Por ejemplo: fondos de emergencia, ahorrar para la jublicación, pagar deudas.",
     "closeModalBtn": "Cerrar",
-    "maxAmount": "Monto Máximo",
+    "maxAmount": "Cantidad Máxima",
+    "minAmount": "Cantidad Mínima",
     "overBudget": "Por encima",
     "underBudget": "Por debajo",
-    "goodResultMessage": "!Felicitaciones 🎉🥳🍾! Tu presupuesto mensual esta bien distribuido.",
-    "badResultMessage": "El objetivo debería ser tener cada categoría por debajo del monto máximo, se pueden añadir ingresos o cortar algunos gastos."
+    "goodResultMessage": "!Felicitaciones 🎉🥳🍾! Tu presupuesto mensual está bien distribuido.",
+    "badResultMessage": "El objetivo debería ser tener Necesidades y Deseos por debajo de la cantidad máxima y Ahorros por encima de la cantidad mínima. Se pueden añadir ingresos, aumentar ahorros o cortar algunos gastos."
 }

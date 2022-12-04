@@ -18,10 +18,12 @@ function Analysis({ title, budget, displayResults }) {
         color = (title != 'savings' ? 'red' : 'green');
     }
 
+    let idOfAmountText = (title != 'savings' ? 'maxAmount' : 'minAmount')
+
     return (
         <div className='analysis'>
             <div className='analysis__container'>
-                <p className='analysis__max-amount-title'><Text tid='maxAmount' /></p>
+                <p className='analysis__max-amount-title'><Text tid={idOfAmountText} /></p>
                 <p className='analysis__max-amount'><Text tid='currencySymbol' />{maxAmount}</p>
             </div>
             <div className='analysis__container' style={{color}}>
