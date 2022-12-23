@@ -78,7 +78,10 @@ function Calculator() {
                 displayResults={displayResults}
                 isBudgetHealthy={isBudgetHealthy}
             />
-            <button className='calculator__check-btn' onClick={checkFinances}>Check My Finances!</button>
+            <button className='calculator__check-btn' onClick={checkFinances}> 
+             <span className="btnText">Check My Finances!</span>
+             <span className="btn__anime"></span>
+            </button>
             <Modals
                 isOpen={isOpen}
                 updateModalState={updateModalState}
