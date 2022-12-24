@@ -42,6 +42,17 @@ input, select {
   --space-block-m: 2em;
 }
 
+/* Utility Classes */
+
+.selected {
+  color: var(--clr-primary);
+}
+
+a.active{
+  text-decoration: underline;
+  color: var(--clr-bg);
+}
+
 /* Typography */
 
 body {
@@ -112,12 +123,26 @@ body {
   font-weight: var(--fw-bold);
 }
 
-.header a,
+.headerLink,
 .fundamentals a {
   color: inherit;
   text-decoration: none;
 }
 
+/* <<<<<<< HEAD */
+/* ======= */
+.languages__en-btn,
+.languages__es-btn {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-bold);
+}
+
+.calculator__check-btn {
+  color: var(--clr-text);
+  font-weight: var(--fw-bold);
+}
+
+/* >>>>>>> origin */
 .modal__content {
   font-size: var(--fs-100);
 }
@@ -133,6 +158,7 @@ body {
 .modal__btn {
   color: var(--clr-text);
   font-family: inherit;
+  font-weight: var(--fw-bold);
 }
 
 .adder__name-label,
@@ -241,6 +267,20 @@ body {
   }
 }
 
+.languages {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.1em;
+}
+
+.languages__en-btn,
+.languages__es-btn {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .fundamentals {
   margin: 3em var(--space-inline-m);
   text-align: center;
@@ -318,6 +358,7 @@ body {
   display: grid;
   grid-template-areas:
     "left top right"
+    "left languages right"
     "left adder right"
     "left incomes right"
     "left needs right"
@@ -359,6 +400,11 @@ body {
   font-weight: bolder;
 }
 
+.languages {
+  grid-area: languages;
+  justify-self: flex-end;
+}
+
 .adder {
   grid-area: adder;
 }
@@ -388,7 +434,7 @@ body {
   .calculator {
     grid-template-areas:
       "left top top right"
-      "left buttons buttons right"
+      "left languages languages right"
       "left adder adder right"
       "left incomes needs right"
       "left wants savings right"
@@ -396,17 +442,21 @@ body {
       "left check-btn check-btn right"
       "left bottom bottom right";
   }
+  .message {
+    width: 50%;
+  }
 }
 
 @media (min-width: 75em) {
   .calculator {
     grid-template-areas:
-      "top top top"
-      "adder adder incomes"
-      "needs wants savings"
-      "message message message"
-      "check-btn check-btn check-btn"
-      "bottom bottom bottom";
+      "left top top top right"
+      "left languages languages languages right"
+      "left adder adder incomes right"
+      "left needs wants savings right"
+      "left message message message right"
+      "left check-btn check-btn check-btn right"
+      "left bottom bottom bottom right";
   }
 }
 
@@ -535,9 +585,17 @@ body {
   grid-area: button;
   border: none;
   padding: 0;
-  background-color: none;
+  /* background-color: none; */
   cursor: pointer;
-  justify-self: flex-start;
+  /* justify-self: flex-start; */
+}
+
+.adder__btn i:hover,
+.adder__title i:hover,
+.category__title i:hover,
+.fa-trash:hover{
+  color: #b004b5;
+  transition: .25s;
 }
 
 .adder__btn i {
@@ -622,6 +680,7 @@ body {
   background-color: var(--clr-text);
   border-radius: 25px;
   padding: 1em;
+/* <<<<<<< HEAD */
 }
 
 /* Responsive media queries */
@@ -632,6 +691,10 @@ body {
 
   .fundamentals__container{
     padding: 20px;
+  }
+
+  .main{
+    width: 40%;
   }
 }
 

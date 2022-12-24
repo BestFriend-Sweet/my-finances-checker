@@ -1,4 +1,5 @@
 import useHover from '../hooks/useHover'
+import { Text } from '../components/LanguageProvider'
 
 function LineItem({ item, removeFromBudget }) {
     const { isHovered, hoverRef } = useHover()
@@ -9,7 +10,7 @@ function LineItem({ item, removeFromBudget }) {
                 <p className='line-item__name'>{item.name}</p>
                 {isHovered && <i className="fa-solid fa-trash" onClick={() => removeFromBudget(item)}></i>}
             </div>
-            <p className='line-item__amount'>${item.amount}</p>
+            <p className='line-item__amount'><Text tid='currencySymbol' />{item.amount}</p>
         </div>
     )
 }

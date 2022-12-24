@@ -2,8 +2,10 @@ import Modals from '../components/Modals'
 import Adder from '../components/Adder'
 import Category from '../components/Category'
 import Message from '../components/Message'
+import LanguageSelector from '../components/LanguageSelector'
 import { useState } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
+import { Text } from '../components/LanguageProvider'
 
 function Calculator() {
     const [isOpen, setIsOpen] = useState({ instructions: false, needs: false, wants: false, savings: false })
@@ -24,8 +26,8 @@ function Calculator() {
     })
     
     function updateBudget(formData) {
-        setBudget(prevBudget => { 
-            return {...prevBudget, [formData.category]: [...prevBudget[formData.category], formData]}
+        setBudget(prev => { 
+            return {...prev, [formData.category]: [...prev[formData.category], formData]}
         })
     }
 
@@ -48,7 +50,7 @@ function Calculator() {
         const wantsResult = budget.incomes.reduce((prev, curr) => prev + Number(curr.amount), 0) * 0.3 - budget.wants.reduce((prev, curr) => prev + Number(curr.amount), 0)
         const savingsResult = budget.incomes.reduce((prev, curr) => prev + Number(curr.amount), 0) * 0.2 - budget.savings.reduce((prev, curr) => prev + Number(curr.amount), 0)
 
-        if (needsResult >= 0 && wantsResult >= 0 && savingsResult >= 0) {
+        if (needsResult >= 0 && wantsResult >= 0 && savingsResult <= 0) {
             setIsBudgetHealthy(true)
         }
     }
@@ -67,6 +69,7 @@ function Calculator() {
 
     return (
         <main className='calculator'>
+            <LanguageSelector />
             <Adder
                 title='instructions'
                 updateBudget={updateBudget}
@@ -78,10 +81,12 @@ function Calculator() {
                 displayResults={displayResults}
                 isBudgetHealthy={isBudgetHealthy}
             />
-            <button className='calculator__check-btn' onClick={checkFinances}> 
-             <span className="btnText">Check My Finances!</span>
-             <span className="btn__anime"></span>
+
+            <button className='calculator__check-btn' onClick={checkFinances}>
+            <span className="btnText"><Text tid='checkButton' /></span>
+            <span className="btn__anime"></span>
             </button>
+
             <Modals
                 isOpen={isOpen}
                 updateModalState={updateModalState}

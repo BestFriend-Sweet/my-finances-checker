@@ -1,3 +1,6 @@
+import { Text } from '../components/LanguageProvider'
+import LanguageSelector from '../components/LanguageSelector'
+
 function Fundamentals() {
   return (
     <main className="fundamentals">
