@@ -85,14 +85,12 @@ body {
   height: 100%;
   width: 100%;
   border-radius: 10px;
-  border: 2px solid var(--clr-primary);
   color: black;
-
+  border: 2px solid var(--clr-primary);
 }
 
 .welcome__btn:hover>.btnText{
   color: var(--clr-primary);
-  font-weight: bolder;
 }
 
 .btnText {
@@ -397,7 +395,6 @@ body {
 
 .calculator__check-btn:hover>.btnText{
   color: var(--clr-primary);
-  font-weight: bolder;
 }
 
 .languages {
