@@ -85,8 +85,8 @@ body {
   height: 100%;
   width: 100%;
   border-radius: 10px;
-  color: black;
   border: 2px solid var(--clr-primary);
+  color: black;
 }
 
 .welcome__btn:hover>.btnText{
@@ -284,7 +284,7 @@ body {
   text-align: center;
 }
 
-.fundamentals__title h1{
+.fundamentals__title{
   margin-bottom: 5px ;
   color: var(--clr-primary);
 }
@@ -327,10 +327,11 @@ body {
 }
 
 .main{
-  padding-top: 20px;
+  padding: 10px;
+  padding-bottom: 20px;
   width: 30%;
   margin: auto;
-  height: 52vh;
+  height: auto;
   margin-top: 4em;
 }
 
@@ -705,7 +706,6 @@ body {
 @media (max-width: 44em){
    .main{
     width: 70%;
-    height: 60vh;
    }  
 
    .grid{
