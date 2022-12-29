@@ -71,21 +71,9 @@ body {
 .welcome__btn {
   font-weight: var(--fw-semi-bold);
   font-size: var(--fs-300);
-  border-radius: 10px;
-  padding: 0.8em 4em;
-  position: relative;
-  background-color: var(--clr-primary);
-  border: none;
-  cursor: pointer;
 }
 
 .welcome__btn:hover>.btn__anime{
-  right: 0px;
-  top: 0px;
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  border: 2px solid var(--clr-primary);
   color: black;
 }
 
@@ -94,21 +82,7 @@ body {
 }
 
 .btnText {
-  z-index: 3;
-  position: relative;
   color: white
-}
-
-.btn__anime {
-  transition: all .25s ease;
-  position: absolute;
-  right: 1.1em;
-  top: 0.5em;
-  height: 1.7em;
-  width: 1.7em;
-  border-radius: 1.5em;
-  background-color: var(--clr-bg);
-  z-index: 2;
 }
 
 .header {
@@ -127,8 +101,14 @@ body {
   text-decoration: none;
 }
 
-/* <<<<<<< HEAD */
-/* ======= */
+.fundamentals__note a {
+  color: var(--clr-primary);
+}
+
+.fundamentals__note a:hover {
+  text-decoration: underline;
+}
+
 .languages__en-btn,
 .languages__es-btn {
   font-size: var(--fs-200);
@@ -140,7 +120,6 @@ body {
   font-weight: var(--fw-bold);
 }
 
-/* >>>>>>> origin */
 .modal__content {
   font-size: var(--fs-100);
 }
@@ -180,8 +159,6 @@ body {
 .adder__name-error,
 .adder__amount-error {
   font-size: 0.7rem;
-  margin: 0;
-  margin-top: 0.3em;
   font-weight: var(--fw-semi-bold);
 }
 
@@ -225,6 +202,41 @@ body {
   align-items: center;
 }
 
+.welcome__btn {
+  border-radius: 10px;
+  padding: 0.8em 4em;
+  position: relative;
+  background-color: var(--clr-primary);
+  border: none;
+  cursor: pointer;
+}
+
+.welcome__btn:hover>.btn__anime{
+  right: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid var(--clr-primary);
+}
+
+.btnText {
+  z-index: 3;
+  position: relative;
+}
+
+.btn__anime {
+  transition: all .25s ease;
+  position: absolute;
+  right: 1.1em;
+  top: 0.5em;
+  height: 1.7em;
+  width: 1.7em;
+  border-radius: 1.5em;
+  background-color: var(--clr-bg);
+  z-index: 2;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -254,15 +266,6 @@ body {
 .header__item:hover{
   color: var(--clr-bg) ;
   text-decoration: underline;
-}
-
-@media (min-width: 32em) {
-  .header__list i {
-    display: none;
-  }
-  .header__item {
-    display: block;
-  }
 }
 
 .languages {
@@ -315,10 +318,6 @@ body {
   margin-top: 3em;
 }
 
-.fundamentals__note a{color: var(--clr-primary);}
-
-.fundamentals__note a:hover{text-decoration: underline;}
-
 .fundamentals__list{
   list-style: none;
   color: var(--clr-primary);
@@ -333,16 +332,6 @@ body {
   margin: auto;
   height: auto;
   margin-top: 4em;
-}
-
-@media (min-width: 50em) {
-  .fundamentals {
-    margin: 3em var(--space-inline-d);
-  }
-  .fundamentals__description {
-    width: 70%;
-    margin: auto;
-  }
 }
 
 .grid{
@@ -381,7 +370,6 @@ body {
   position: relative;
   border: none;
 }
-
 
 .calculator__check-btn:hover>.btn__anime{
   right: 0px;
@@ -426,36 +414,6 @@ body {
 .message {
   grid-area: message;
   justify-self: center;
-}
-
-@media (min-width: 50em) {
-  .calculator {
-    grid-template-areas:
-      "left top top right"
-      "left languages languages right"
-      "left adder adder right"
-      "left incomes needs right"
-      "left wants savings right"
-      "left message message right"
-      "left check-btn check-btn right"
-      "left bottom bottom right";
-  }
-  .message {
-    width: 50%;
-  }
-}
-
-@media (min-width: 75em) {
-  .calculator {
-    grid-template-areas:
-      "left top top top right"
-      "left languages languages languages right"
-      "left adder adder incomes right"
-      "left needs wants savings right"
-      "left message message message right"
-      "left check-btn check-btn check-btn right"
-      "left bottom bottom bottom right";
-  }
 }
 
 .modal {
@@ -544,6 +502,12 @@ body {
   height: 34px;
 }
 
+.adder__name-error,
+.adder__amount-error {
+  margin: 0;
+  margin-top: 0.3em;
+}
+
 .adder__name-label {
   grid-area: name;
 }
@@ -583,9 +547,7 @@ body {
   grid-area: button;
   border: none;
   padding: 0;
-  /* background-color: none; */
   cursor: pointer;
-  /* justify-self: flex-start; */
 }
 
 .adder__btn i:hover,
@@ -599,27 +561,6 @@ body {
 .adder__btn i {
   color: var(--clr-primary);
   font-size: 2.5em;
-}
-
-@media (min-width: 32em) {
-  .adder {
-    width: 450px;
-  }
-  .adder__form {
-    grid-template-areas:
-      "name amount category blank"
-      "input-name input-amount input-category button"
-      "name-error amount-error space space";
-  }
-  .adder__name-input {
-    width: 150px;
-  }
-  .adder__name-category {
-    width: 75px;
-  }
-  .adder__btn {
-    justify-self: center;
-  }
 }
 
 .category {
@@ -678,50 +619,105 @@ body {
   background-color: var(--clr-text);
   border-radius: 25px;
   padding: 1em;
-/* <<<<<<< HEAD */
 }
 
 /* Responsive media queries */
+
+@media (min-width: 75em) {
+  .calculator {
+    grid-template-areas:
+      "left top top top right"
+      "left languages languages languages right"
+      "left adder adder incomes right"
+      "left needs wants savings right"
+      "left message message message right"
+      "left check-btn check-btn check-btn right"
+      "left bottom bottom bottom right";
+  }
+}
+
 @media (max-width: 60em){
   .grid{
-   grid-gap: 20px;
+    grid-gap: 20px;
   }
-
   .fundamentals__container{
     padding: 20px;
   }
-
   .main{
     width: 40%;
   }
 }
 
-
 @media (min-width: 50em) {
+  .fundamentals {
+    margin: 3em var(--space-inline-d);
+  }
+  .fundamentals__description {
+    width: 70%;
+    margin: auto;
+  }
+  .calculator {
+    grid-template-areas:
+      "left top top right"
+      "left languages languages right"
+      "left adder adder right"
+      "left incomes needs right"
+      "left wants savings right"
+      "left message message right"
+      "left check-btn check-btn right"
+      "left bottom bottom right";
+  }
+  .message {
+    width: 50%;
+  }
   .modal__content {
     max-width: 600px;
   }
 }
 
 @media (max-width: 44em){
-   .main{
+  .main{
     width: 70%;
    }  
-
-   .grid{
+  .grid{
     grid-template-columns: 70%;
     justify-content: center;
     grid-template-rows: repeat(3,1fr);
     grid-gap: 20px;
    }
+}
 
+@media (min-width: 32em) {
+  .header__list i {
+    display: none;
+  }
+  .header__item {
+    display: block;
+  }
+  .adder {
+    width: 450px;
+  }
+  .adder__form {
+    grid-template-areas:
+      "name amount category blank"
+      "input-name input-amount input-category button"
+      "name-error amount-error space space";
+  }
+  .adder__name-input {
+    width: 150px;
+  }
+  .adder__name-category {
+    width: 75px;
+  }
+  .adder__btn {
+    justify-self: center;
+  }
 }
 
 @media (max-width: 32em) {
   .main{
     width: 90%;
   }
-
   .grid{
     grid-template-columns: 90%;
   }
