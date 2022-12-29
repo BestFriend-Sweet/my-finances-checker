@@ -83,8 +83,8 @@ function Calculator() {
             />
 
             <button className='calculator__check-btn' onClick={checkFinances}>
-            <span className="btnText"><Text tid='checkButton' /></span>
-            <span className="btn__anime"></span>
+                <span className="btnText"><Text tid='checkButton' /></span>
+                <span className="btn__anime"></span>
             </button>
 
             <Modals
